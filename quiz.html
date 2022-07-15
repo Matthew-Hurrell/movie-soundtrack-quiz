@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your musical knowledge with the Movie Soundtrack Quiz!">
+    <meta name="keywords" content="Quiz, Movie, Soundtrack, 2022, Film, Test, Music">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>The Movie Soundtrack Quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/008ae79857.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="score-progress-bar-div">
+            <div class="progress-bar-div">
+                <p class="progress-bar-text">Question</p>
+                <div class="progress-bar"></div>
+            </div>
+            <div class="score-div">
+                <p class="score-text">Score</p>
+                <h2 class="score">0</h2>
+            </div>
+        </div>
+        <div class="question-div">
+            <h2 class="question">What movie is this track from?</h2>
+        </div>
+        <div class="audio-div">
+            <audio src="assets/audio/one.mp3" id="player"></audio>
+            <div class="audio-controls">
+                <button class="audio-button" id="play"><i class="fa-solid fa-play"></i></button>
+                <button class="audio-button" id="pause"><i class="fa-solid fa-pause"></i></button>
+                <button class="audio-button" id="volume-down"><i class="fa-solid fa-volume-low"></i></button>
+                <button class="audio-button" id="volume-up"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+        </div>
+        <div class="answers-div">
+            <button class="answer-button" id="answer-one">Answer 1</button>
+            <button class="answer-button" id="answer-two">Answer 2</button>
+            <button class="answer-button" id="answer-three">Answer 3</button>
+            <button class="answer-button" id="answer-four">Answer 4</button>
+        </div>
+        <div class="next-div">
+            <button class="next btn hide">Next</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
