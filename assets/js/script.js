@@ -7,13 +7,14 @@ const audio = document.getElementsByTagName('audio');
 const progressBar = document.getElementsByClassName('progress-bar');
 const progressBarText = document.getElementsByClassName('progress-bar-text');
 const score = document.getElementsByClassName('score');
-const questionElement = document.getElementsByClassName('question');
+const questionElement = document.getElementById('question');
+const timerElement = document.getElementById('timer');
 
 // Questions //
 
 const questions = [
     {
-        question: 'Testing!',
+        question: 'What movie is this track from?',
         audio: 'one.mp3',
         answer1: 'Home Alone',
         answer2: 'Richie Rich',
@@ -23,7 +24,6 @@ const questions = [
 ]
 
 let quizScore = 0;
-let countdownTimer = 30;
 
 
 // Audio Controls //
@@ -45,8 +45,26 @@ volumeUp.addEventListener('click', () => {
 })
 
 function showQuestion(question) {
-    questionElement.innerText = questions[0].question;
     console.log(questions[0].question);
-}
+    questionElement.innerText = questions[0].question;
+} 
+
+
 
 showQuestion();
+
+// Countdown Timer //
+
+let timer = 29;
+
+function countdownTimer() {
+    timerElement.innerText = timer;
+    --timer;
+    if (timer === -1) {
+        console.log('You lose!');
+        clearInterval(intervalTimer);
+    }
+}
+
+const intervalTimer = setInterval(countdownTimer, 1000);
+
