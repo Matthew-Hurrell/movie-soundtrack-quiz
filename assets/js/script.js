@@ -11,12 +11,18 @@ const questionElement = document.getElementById('question');
 const timerElement = document.getElementById('timer');
 const startButton = document.querySelector('#start-button');
 
+// Answer Buttons //
+
+const answerOne = document.getElementById('answer-one');
+const answerTwo = document.getElementById('answer-two');
+const answerThree = document.getElementById('answer-three');
+const answerFour = document.getElementById('answer-four');
+
 let currentQuestion = {};
 let availableQuestions = [];
 let quizScore = 0;
 
 // Event Listeners //
-
 
 // Questions //
 
@@ -135,28 +141,19 @@ const questions = [
 
 play.addEventListener('click', () => {
     player.play();
-});
+})
 
 pause.addEventListener('click', () => {
     player.pause();
-});
+})
 
 volumeDown.addEventListener('click', () => {
     player.volume -= 0.1;
-});
+})
 
 volumeUp.addEventListener('click', () => {
     player.volume += 0.1;
-});
-
-function showQuestion(question) {
-    console.log(questions[0].question);
-    questionElement.innerText = questions[0].question;
-};
-
-
-
-showQuestion();
+})
 
 // Countdown Timer //
 
@@ -175,10 +172,28 @@ const intervalTimer = setInterval(countdownTimer, 1000);
 
 // Start Game //
 
-function startGame(event) {
-    window.location.href = "quiz.html";
-    console.log('game started');
-    countdownTimer();
+function startGame() {
+    console.log('game started!');
+    quizScore = 0;
+    availableQuestions = [...questions];
+    shuffle(availableQuestions);
+    // Take first question in available questions array and put it in current question object //
+    console.log(availableQuestions[0]);
+    currentQuestion = availableQuestions[0];
+    showQuestion(currentQuestion);
+}
+
+startGame();
+
+// Display Current Question //
+
+function showQuestion(currentQuestion) {
+    questionElement.innerText = currentQuestion.question;
+    player.setAttribute('src', "assets/audio/" + currentQuestion.audio);
+    answerOne.innerText = currentQuestion.answer1;
+    answerTwo.innerText = currentQuestion.answer2;
+    answerThree.innerText = currentQuestion.answer3;
+    answerFour.innerText = currentQuestion.answer4;
 }
 
 // Next Question //
@@ -188,7 +203,19 @@ function nextQuestion() {
 }
 
 // Question Randomizer //
+// Fisher-Yates Shuffle //
 
+function shuffle(availableQuestions) {
+    let currentIndex = availableQuestions.length, randomIndex;
+
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [availableQuestions[currentIndex], availableQuestions[randomIndex]] = [availableQuestions[randomIndex], availableQuestions[currentIndex]];
+    }
+    return availableQuestions;
+}
 
 // Last Question //
 
