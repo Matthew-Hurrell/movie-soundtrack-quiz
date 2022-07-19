@@ -167,3 +167,13 @@ body {
 .fa-pause {
     color: orange;
 }
+
+/* Correct and Incorrect Button Styling */
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}

@@ -6,10 +6,14 @@ const volumeUp = document.getElementById('volume-up');
 const audio = document.getElementsByTagName('audio');
 const progressBar = document.getElementsByClassName('progress-bar');
 const progressBarText = document.getElementsByClassName('progress-bar-text');
-const score = document.getElementsByClassName('score');
+const score = document.getElementById('score');
 const questionElement = document.getElementById('question');
 const timerElement = document.getElementById('timer');
 const startButton = document.querySelector('#start-button');
+const nextButton = document.getElementById('next-button');
+const answerButtons = document.getElementsByClassName('answer-button');
+
+console.log(answerButtons.length);
 
 // Answer Buttons //
 
@@ -20,9 +24,11 @@ const answerFour = document.getElementById('answer-four');
 
 let currentQuestion = {};
 let availableQuestions = [];
+let usedQuestions = [];
 let quizScore = 0;
 const maxQuestions = 10;
-const scorePoints = 1;
+
+score.innerText = quizScore;
 
 // Event Listeners //
 
@@ -30,6 +36,7 @@ answerOne.addEventListener('click', checkAnswerOne);
 answerTwo.addEventListener('click', checkAnswerTwo);
 answerThree.addEventListener('click', checkAnswerThree);
 answerFour.addEventListener('click', checkAnswerFour);
+nextButton.addEventListener('click', nextQuestion);
 
 // Questions //
 
@@ -207,6 +214,8 @@ function showQuestion(currentQuestion) {
 
 function nextQuestion() {
 
+    // availableQuestions.shift()
+
 }
 
 // Question Randomizer //
@@ -234,39 +243,39 @@ function lastQuestion() {
 
 function checkAnswerOne() {
     if (answerOne.innerHTML === currentQuestion.correct) {
-        console.log('correct');
+        correct();
+        answerOne.classList.add('correct');
     } else {
-        console.log('incorrect');
+        incorrect();
     }
 }
 
 function checkAnswerTwo() {
     if (answerTwo.innerHTML === currentQuestion.correct) {
-        console.log('correct');
+        correct();
+        answerTwo.classList.add('correct');
     } else {
-        console.log('incorrect');
+        incorrect();
     }
 }
 
 function checkAnswerThree() {
     if (answerThree.innerHTML === currentQuestion.correct) {
-        console.log('correct');
+        correct();
+        answerThree.classList.add('correct');
     } else {
-        console.log('incorrect');
+        incorrect();
     }
 }
 
 function checkAnswerFour() {
     if (answerFour.innerHTML === currentQuestion.correct) {
-        console.log('correct');
+        correct();
+        answerFour.classList.add('correct');
     } else {
-        console.log('incorrect');
+        incorrect();
     }
 }
-
-console.log(currentQuestion.correct);
-console.log(answerFour.innerHTML);
-
 
 // Time Out //
 
@@ -285,3 +294,43 @@ function end() {
 function stopMusic () {
 
 }
+
+// Correct Choice //
+
+function correct() {
+
+    // When user guesses correct change background colour of selected answer to green and others to red, stop countdown, remove event listeners, increment score, add next button
+
+    console.log('correct!');
+    clearInterval(intervalTimer);
+    ++quizScore;
+    console.log(quizScore);
+    score.innerText = quizScore;
+    answerOne.removeEventListener('click', checkAnswerOne);
+    answerTwo.removeEventListener('click', checkAnswerTwo);
+    answerThree.removeEventListener('click', checkAnswerThree);
+    answerFour.removeEventListener('click', checkAnswerFour);
+    nextButton.classList.remove('hide');
+}
+
+// Incorrect Choice //
+
+function incorrect() {
+
+    // for loop? Check the innerHTML of each answer and if it matches currentQuestion.correct add the class correct, else add the class incorrect
+    for (let i = 0; i < answerButtons.length; i++) {
+        if (answerButtons[i].innerHTML === currentQuestion.correct) {
+            answerButtons[i].classList.add('correct');
+        } else {
+            answerButtons[i].classList.add('incorrect');
+        }
+    }
+
+    clearInterval(intervalTimer);
+    answerOne.removeEventListener('click', checkAnswerOne);
+    answerTwo.removeEventListener('click', checkAnswerTwo);
+    answerThree.removeEventListener('click', checkAnswerThree);
+    answerFour.removeEventListener('click', checkAnswerFour);
+    nextButton.classList.remove('hide');
+}
+
