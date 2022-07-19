@@ -21,8 +21,15 @@ const answerFour = document.getElementById('answer-four');
 let currentQuestion = {};
 let availableQuestions = [];
 let quizScore = 0;
+const maxQuestions = 10;
+const scorePoints = 1;
 
 // Event Listeners //
+
+answerOne.addEventListener('click', checkAnswerOne);
+answerTwo.addEventListener('click', checkAnswerTwo);
+answerThree.addEventListener('click', checkAnswerThree);
+answerFour.addEventListener('click', checkAnswerFour);
 
 // Questions //
 
@@ -34,7 +41,7 @@ const questions = [
         answer2: 'Richie Rich',
         answer3: 'Mrs Doubtfire',
         answer4: 'The Polar Express',
-        correct: 'answer1'
+        correct: 'Home Alone'
     },
     {
         question: 'What movie is this track from?',
@@ -43,7 +50,7 @@ const questions = [
         answer2: 'The Dark Crystal',
         answer3: 'The Lord of the Rings: The Fellowship of the Ring',
         answer4: 'The Hobbit: An Unexpected Journey',
-        correct: 'answer3'
+        correct: 'The Lord of the Rings: The Fellowship of the Ring'
     },
     {
         question: 'What movie is this track from?',
@@ -52,7 +59,7 @@ const questions = [
         answer2: 'Schindlers List',
         answer3: 'The Pianist',
         answer4: 'Saving Private Ryan',
-        correct: 'answer2'
+        correct: 'Schindlers List'
     },
     {
         question: 'What movie is this track from?',
@@ -61,7 +68,7 @@ const questions = [
         answer2: 'Star Wars: The Phantom Menace',
         answer3: 'Star Wars: A New Hope',
         answer4: 'Star Wars: The Empire Strikes Back',
-        correct: 'answer1'
+        correct: 'Star Wars: Attack of the Clones'
     },
     {
         question: 'What movie is this track from?',
@@ -70,7 +77,7 @@ const questions = [
         answer2: 'American Beauty',
         answer3: 'Requiem for a Dream',
         answer4: 'Good Will Hunting',
-        correct: 'answer2'
+        correct: 'American Beauty'
     },
     {
         question: 'What movie is this track from?',
@@ -79,7 +86,7 @@ const questions = [
         answer2: 'Corpse Bride',
         answer3: 'The Nightmare Before Christmas',
         answer4: 'Edward Scissorhands',
-        correct: 'answer4' 
+        correct: 'Edward Scissorhands' 
     },
     {
         question: 'What movie is this track from?',
@@ -88,7 +95,7 @@ const questions = [
         answer2: 'Princess Mononoke',
         answer3: 'Howls Moving Castle',
         answer4: 'My Neighbour Totoro',
-        correct: 'answer3' 
+        correct: 'Howls Moving Castle' 
     },
     {
         question: 'What movie is this track from?',
@@ -97,7 +104,7 @@ const questions = [
         answer2: 'The Terminal',
         answer3: 'The Truman Show',
         answer4: 'Forrest Gump',
-        correct: 'answer4' 
+        correct: 'Forrest Gump' 
     },
     {
         question: 'What movie is this track from?',
@@ -106,7 +113,7 @@ const questions = [
         answer2: 'Independence Day',
         answer3: 'E.T',
         answer4: 'Star Wars: A New Hope',
-        correct: 'answer1' 
+        correct: 'Jurassic Park' 
     },
     {
         question: 'What movie is this track from?',
@@ -115,7 +122,7 @@ const questions = [
         answer2: 'Gladiator',
         answer3: 'Alexander',
         answer4: 'The Patriot',
-        correct: 'answer2' 
+        correct: 'Gladiator' 
     },
     {
         question: 'What movie is this track from?',
@@ -124,7 +131,7 @@ const questions = [
         answer2: 'Jungle Cruise',
         answer3: 'Pirates of the Caribbean',
         answer4: 'National Treasure',
-        correct: 'answer3' 
+        correct: 'Pirates of the Caribbean' 
     },
     {
         question: 'What movie is this track from?',
@@ -133,7 +140,7 @@ const questions = [
         answer2: 'Guardians of the Galaxy',
         answer3: 'Thor',
         answer4: 'The Avengers',
-        correct: 'answer4' 
+        correct: 'The Avengers' 
     }
 ];
 
@@ -225,9 +232,41 @@ function lastQuestion() {
 
 // Answer Question //
 
-function answerQuestion() {
-
+function checkAnswerOne() {
+    if (answerOne.innerHTML === currentQuestion.correct) {
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+    }
 }
+
+function checkAnswerTwo() {
+    if (answerTwo.innerHTML === currentQuestion.correct) {
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+    }
+}
+
+function checkAnswerThree() {
+    if (answerThree.innerHTML === currentQuestion.correct) {
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+    }
+}
+
+function checkAnswerFour() {
+    if (answerFour.innerHTML === currentQuestion.correct) {
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+    }
+}
+
+console.log(currentQuestion.correct);
+console.log(answerFour.innerHTML);
+
 
 // Time Out //
 
