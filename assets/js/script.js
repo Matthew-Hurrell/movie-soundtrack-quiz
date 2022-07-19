@@ -174,6 +174,7 @@ volumeUp.addEventListener('click', () => {
 let timer = 29;
 
 function countdownTimer() {
+
     timerElement.innerText = timer;
     --timer;
     if (timer === -1) {
@@ -182,7 +183,13 @@ function countdownTimer() {
     }
 }
 
-const intervalTimer = setInterval(countdownTimer, 1000);
+let intervalTimer = setInterval(countdownTimer, 1000);
+
+function resetCountdownTimer() {
+    timerElement.innerText = 30;
+    timer = 29;
+    intervalTimer = setInterval(countdownTimer, 1000);
+}
 
 // Start Game //
 
@@ -192,7 +199,6 @@ function startGame() {
     availableQuestions = [...questions];
     shuffle(availableQuestions);
     // Take first question in available questions array and put it in current question object //
-    console.log(availableQuestions[0]);
     currentQuestion = availableQuestions[0];
     showQuestion(currentQuestion);
 }
@@ -214,8 +220,23 @@ function showQuestion(currentQuestion) {
 
 function nextQuestion() {
 
-    // availableQuestions.shift()
-
+    // update progress bar and question text, check if last question
+    availableQuestions.shift();
+    currentQuestion = availableQuestions[0];
+    showQuestion(currentQuestion);
+    for (let i = 0; i < answerButtons.length; i++) {
+        if (answerButtons[i].classList.contains('correct')) {
+            answerButtons[i].classList.remove('correct');
+        } else {
+            answerButtons[i].classList.remove('incorrect');
+        }
+    }
+    answerOne.addEventListener('click', checkAnswerOne);
+    answerTwo.addEventListener('click', checkAnswerTwo);
+    answerThree.addEventListener('click', checkAnswerThree);
+    answerFour.addEventListener('click', checkAnswerFour);
+    resetCountdownTimer();
+    nextButton.classList.add('hide');
 }
 
 // Question Randomizer //
