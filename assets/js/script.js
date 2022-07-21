@@ -11,7 +11,6 @@ const progressBarText = document.getElementsByClassName('progress-bar-text');
 const score = document.getElementById('score');
 const questionElement = document.getElementById('question');
 const timerElement = document.getElementById('timer');
-const startButton = document.querySelector('#start-button');
 const nextButton = document.getElementById('next-button');
 const answerButtons = document.getElementsByClassName('answer-button');
 const questionCount = document.getElementById('question-count');
@@ -34,8 +33,6 @@ let quizScore = 0;
 let questionNumber = 1;
 let progressBarWidth = 0;
 
-score.innerText = quizScore;
-
 // Event Listeners //
 
 answerOne.addEventListener('click', checkAnswerOne);
@@ -44,6 +41,9 @@ answerThree.addEventListener('click', checkAnswerThree);
 answerFour.addEventListener('click', checkAnswerFour);
 nextButton.addEventListener('click', nextQuestion);
 endButton.addEventListener('click', end);
+
+
+score.innerText = quizScore;
 
 // Questions //
 
@@ -364,6 +364,4 @@ function end() {
     containerTwo.classList.remove('hide');
     endScore.innerText = quizScore;
 }
-
-
 
