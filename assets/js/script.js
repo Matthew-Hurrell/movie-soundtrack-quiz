@@ -4,7 +4,7 @@ const pause = document.getElementById('pause');
 const volumeDown = document.getElementById('volume-down');
 const volumeUp = document.getElementById('volume-up');
 const audio = document.getElementsByTagName('audio');
-const progressBar = document.getElementsByClassName('progress-bar');
+const progressBar = document.getElementById('progress-bar-inner');
 const progressBarText = document.getElementsByClassName('progress-bar-text');
 const score = document.getElementById('score');
 const questionElement = document.getElementById('question');
@@ -12,8 +12,7 @@ const timerElement = document.getElementById('timer');
 const startButton = document.querySelector('#start-button');
 const nextButton = document.getElementById('next-button');
 const answerButtons = document.getElementsByClassName('answer-button');
-
-console.log(answerButtons.length);
+const questionCount = document.getElementById('question-count');
 
 // Answer Buttons //
 
@@ -24,9 +23,9 @@ const answerFour = document.getElementById('answer-four');
 
 let currentQuestion = {};
 let availableQuestions = [];
-let usedQuestions = [];
 let quizScore = 0;
-const maxQuestions = 10;
+let questionNumber = 1;
+let progressBarWidth = 0;
 
 score.innerText = quizScore;
 
@@ -220,7 +219,7 @@ function showQuestion(currentQuestion) {
 
 function nextQuestion() {
 
-    // update progress bar and question text, check if last question
+    // check if last question
     availableQuestions.shift();
     currentQuestion = availableQuestions[0];
     showQuestion(currentQuestion);
@@ -237,6 +236,10 @@ function nextQuestion() {
     answerFour.addEventListener('click', checkAnswerFour);
     resetCountdownTimer();
     nextButton.classList.add('hide');
+    // Increment Score //
+    questionCount.innerText = ++questionNumber;
+    // Increment Progress Bar //
+    progressBar.style.width = questionNumber * 8.33 + '%';
 }
 
 // Question Randomizer //
@@ -307,12 +310,6 @@ function timeOut() {
 // End //
 
 function end() {
-
-}
-
-// Stop Music //
-
-function stopMusic () {
 
 }
 
