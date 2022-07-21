@@ -1,3 +1,5 @@
+const containerOne = document.querySelector('.container-1');
+const containerTwo = document.querySelector('.container-2');
 const player = document.getElementById('player');
 const play = document.getElementById('play');
 const pause = document.getElementById('pause');
@@ -14,6 +16,10 @@ const nextButton = document.getElementById('next-button');
 const answerButtons = document.getElementsByClassName('answer-button');
 const questionCount = document.getElementById('question-count');
 const endButton = document.getElementById('end-button');
+const endElement = document.getElementById('end-div');
+const endScore = document.getElementById('end-score');
+const replayButton = document.getElementById('replay-button');
+const homeButton = document.getElementById('home-button');
 
 // Answer Buttons //
 
@@ -37,6 +43,7 @@ answerTwo.addEventListener('click', checkAnswerTwo);
 answerThree.addEventListener('click', checkAnswerThree);
 answerFour.addEventListener('click', checkAnswerFour);
 nextButton.addEventListener('click', nextQuestion);
+endButton.addEventListener('click', end);
 
 // Questions //
 
@@ -171,7 +178,7 @@ volumeUp.addEventListener('click', () => {
 
 // Countdown Timer //
 
-let timer = 29;
+let timer = 59;
 
 function countdownTimer() {
 
@@ -186,8 +193,8 @@ function countdownTimer() {
 let intervalTimer = setInterval(countdownTimer, 1000);
 
 function resetCountdownTimer() {
-    timerElement.innerText = 30;
-    timer = 29;
+    timerElement.innerText = 60;
+    timer = 59;
     intervalTimer = setInterval(countdownTimer, 1000);
 }
 
@@ -346,4 +353,17 @@ function incorrect() {
         nextButton.classList.remove('hide');
     }
 }
+
+// End //
+
+homeButton.addEventListener('click', home);
+
+function end() {
+
+    containerOne.classList.add('hide');
+    containerTwo.classList.remove('hide');
+    endScore.innerText = quizScore;
+}
+
+
 

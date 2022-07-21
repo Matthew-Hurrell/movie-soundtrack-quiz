@@ -15,13 +15,9 @@ body {
     align-items: center;
 }
 
-.hide {
-    display: none;
-}
-
 /* Home Page */
 
-.container {
+.container-1, .container-2 {
     background-color: white;
     width: 600px;
     max-width: 80%;
@@ -34,7 +30,7 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
-.buttons-div {
+#buttons-div {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -59,19 +55,11 @@ body {
     background: orange;
 }
 
-.leaderboard {
-    background: orange;
-}
-
 .start:hover {
     box-shadow: 0 0.4rem 1.4rem 0 green;
 }
 
 .rules:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 orange;
-}
-
-.leaderboard:hover {
     box-shadow: 0 0.4rem 1.4rem 0 orange;
 }
 
@@ -82,7 +70,7 @@ body {
 
 /* Quiz */
 
-.audio-div {
+#audio-div {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -109,7 +97,7 @@ body {
 }
 
 
-.answers-div {
+#answers-div {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, auto);
@@ -117,7 +105,7 @@ body {
     margin: 20px 0;
 }
 
-.score-progress-bar-div {
+#score-progress-bar-div {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -182,4 +170,10 @@ body {
 
 .incorrect {
     background-color: red;
+}
+
+/* Hide */
+
+.hide {
+    display: none;
 }

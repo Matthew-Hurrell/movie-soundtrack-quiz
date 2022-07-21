@@ -13,8 +13,8 @@
     <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="score-progress-bar-div">
+    <div class="container-1">
+        <div id="score-progress-bar-div">
             <div class="progress-bar-div">
                 <p class="progress-bar-text">Question <span id="question-count">1</span> out of 12</p>
                 <div id="progress-bar">
@@ -22,17 +22,17 @@
                 </div>
             </div>
             <div class="countdown-timer-div">
-                <p id="timer-text">Time Left: <span id="timer">30</span></p>
+                <p id="timer-text">Time Left: <span id="timer">60</span></p>
             </div>
             <div class="score-div">
                 <p class="score-text">Score</p>
                 <h2 id="score"></h2>
             </div>
         </div>
-        <div class="question-div">
+        <div id="question-div">
             <h2 id="question">What movie is this track from?</h2>
         </div>
-        <div class="audio-div">
+        <div id="audio-div">
             <audio src="assets/audio/one.mp3" id="player"></audio>
             <div class="audio-controls">
                 <button class="audio-button" id="play"><i class="fa-solid fa-play"></i></button>
@@ -41,7 +41,7 @@
                 <button class="audio-button" id="volume-up"><i class="fa-solid fa-volume-high"></i></button>
             </div>
         </div>
-        <div class="answers-div">
+        <div id="answers-div">
             <button class="answer-button" id="answer-one">Answer 1</button>
             <button class="answer-button" id="answer-two">Answer 2</button>
             <button class="answer-button" id="answer-three">Answer 3</button>
@@ -51,9 +51,23 @@
             <button class="next btn hide" id="next-button">Next</button>
         </div>
         <div id="end-div">
-            <a href="end.html"><button id="end-button" class="btn hide">End</button></a>
+            <button id="end-button" class="btn hide">End</button>
         </div>
-
+        <div class="buttons-div">
+            <a href="quiz.html"><button class="btn hide" id="replay-button">Play Again</button></a>
+            <a href="index.html"><button class="btn hide" id="home-button">Home <i class="fa-solid fa-house"></i></button></a>
+        </div>
+    </div>
+    <div class="container-2 hide">
+        <div id="end-div">
+            <div id="end-text-div">
+                <h1 id="end-score-text">Congratulations you scored <span id="end-score"></span></h1>
+            </div>
+        </div>
+        <div class="buttons-div">
+            <a href="quiz.html"><button class="btn" id="replay-button">Play Again</button></a>
+            <a href="index.html"><button class="btn" id="home-button">Home <i class="fa-solid fa-house"></i></button></a>
+        </div>
     </div>
     
 </body>
