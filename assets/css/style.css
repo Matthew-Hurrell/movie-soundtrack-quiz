@@ -9,7 +9,7 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url(/assets/images/background.jpg);
+    background-image: url(../images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +21,7 @@ body {
 /* Home Page */
 
 .container-1, .container-2 {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.882);
     width: 600px;
     max-width: 80%;
     padding: 1rem;
