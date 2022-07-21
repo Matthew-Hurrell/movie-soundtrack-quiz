@@ -13,6 +13,7 @@ const startButton = document.querySelector('#start-button');
 const nextButton = document.getElementById('next-button');
 const answerButtons = document.getElementsByClassName('answer-button');
 const questionCount = document.getElementById('question-count');
+const endButton = document.getElementById('end-button');
 
 // Answer Buttons //
 
@@ -24,7 +25,7 @@ const answerFour = document.getElementById('answer-four');
 let currentQuestion = {};
 let availableQuestions = [];
 let quizScore = 0;
-let questionNumber = 0;
+let questionNumber = 1;
 let progressBarWidth = 0;
 
 score.innerText = quizScore;
@@ -177,7 +178,6 @@ function countdownTimer() {
     timerElement.innerText = timer;
     --timer;
     if (timer === -1) {
-        console.log('Time Out!');
         clearInterval(intervalTimer);
         timeOut();
     }
@@ -194,7 +194,6 @@ function resetCountdownTimer() {
 // Start Game //
 
 function startGame() {
-    console.log('game started!');
     quizScore = 0;
     availableQuestions = [...questions];
     shuffle(availableQuestions);
@@ -240,7 +239,7 @@ function nextQuestion() {
     // Increment Score //
     questionCount.innerText = ++questionNumber;
     // Increment Progress Bar //
-    progressBar.style.width = questionNumber * 8.33 + '%';
+    progressBar.style.width = (questionNumber - 1) * 8.33 + '%';
 }
 
 // Question Randomizer //
@@ -256,12 +255,6 @@ function shuffle(availableQuestions) {
         [availableQuestions[currentIndex], availableQuestions[randomIndex]] = [availableQuestions[randomIndex], availableQuestions[currentIndex]];
     }
     return availableQuestions;
-}
-
-// Last Question //
-
-function lastQuestion() {
-
 }
 
 // Check User Answer //
@@ -309,28 +302,24 @@ function timeOut() {
     incorrect();
 }
 
-// End //
-
-function end() {
-
-}
-
 // Correct Choice //
 
 function correct() {
 
     // When user guesses correct change background colour of selected answer to green and others to red, stop countdown, remove event listeners, increment score, add next button
 
-    console.log('correct!');
     clearInterval(intervalTimer);
     ++quizScore;
-    console.log(quizScore);
     score.innerText = quizScore;
     answerOne.removeEventListener('click', checkAnswerOne);
     answerTwo.removeEventListener('click', checkAnswerTwo);
     answerThree.removeEventListener('click', checkAnswerThree);
     answerFour.removeEventListener('click', checkAnswerFour);
-    nextButton.classList.remove('hide');
+    if (availableQuestions.length === 1){
+        endButton.classList.remove('hide');
+    } else {
+        nextButton.classList.remove('hide');
+    }
 }
 
 // Incorrect Choice //
@@ -351,6 +340,10 @@ function incorrect() {
     answerTwo.removeEventListener('click', checkAnswerTwo);
     answerThree.removeEventListener('click', checkAnswerThree);
     answerFour.removeEventListener('click', checkAnswerFour);
-    nextButton.classList.remove('hide');
+    if (availableQuestions.length === 1){
+        endButton.classList.remove('hide');
+    } else {
+        nextButton.classList.remove('hide');
+    }
 }
 
