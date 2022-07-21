@@ -24,7 +24,7 @@ const answerFour = document.getElementById('answer-four');
 let currentQuestion = {};
 let availableQuestions = [];
 let quizScore = 0;
-let questionNumber = 1;
+let questionNumber = 0;
 let progressBarWidth = 0;
 
 score.innerText = quizScore;
@@ -179,6 +179,7 @@ function countdownTimer() {
     if (timer === -1) {
         console.log('Time Out!');
         clearInterval(intervalTimer);
+        timeOut();
     }
 }
 
@@ -263,7 +264,7 @@ function lastQuestion() {
 
 }
 
-// Answer Question //
+// Check User Answer //
 
 function checkAnswerOne() {
     if (answerOne.innerHTML === currentQuestion.correct) {
@@ -304,7 +305,8 @@ function checkAnswerFour() {
 // Time Out //
 
 function timeOut() {
-
+    questionElement.innerText = 'Sorry you have run out of time!';
+    incorrect();
 }
 
 // End //
