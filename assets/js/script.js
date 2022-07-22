@@ -365,5 +365,6 @@ function end() {
     containerOne.classList.add('hide');
     containerTwo.classList.remove('hide');
     endScore.innerText = quizScore;
+    player.pause();
 }
 
