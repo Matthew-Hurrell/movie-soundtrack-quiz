@@ -271,6 +271,7 @@ function checkAnswerOne() {
         correct();
         answerOne.classList.add('correct');
     } else {
+        answerOne.classList.add('incorrect');
         incorrect();
     }
 }
@@ -280,6 +281,7 @@ function checkAnswerTwo() {
         correct();
         answerTwo.classList.add('correct');
     } else {
+        answerTwo.classList.add('incorrect');
         incorrect();
     }
 }
@@ -289,6 +291,7 @@ function checkAnswerThree() {
         correct();
         answerThree.classList.add('correct');
     } else {
+        answerThree.classList.add('incorrect');
         incorrect();
     }
 }
@@ -298,6 +301,7 @@ function checkAnswerFour() {
         correct();
         answerFour.classList.add('correct');
     } else {
+        answerFour.classList.add('incorrect');
         incorrect();
     }
 }
@@ -337,9 +341,7 @@ function incorrect() {
     for (let i = 0; i < answerButtons.length; i++) {
         if (answerButtons[i].innerHTML === currentQuestion.correct) {
             answerButtons[i].classList.add('correct');
-        } else {
-            answerButtons[i].classList.add('incorrect');
-        }
+        } 
     }
 
     clearInterval(intervalTimer);
