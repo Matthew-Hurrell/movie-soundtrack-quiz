@@ -358,8 +358,6 @@ function incorrect() {
 
 // End //
 
-homeButton.addEventListener('click', home);
-
 function end() {
 
     containerOne.classList.add('hide');
