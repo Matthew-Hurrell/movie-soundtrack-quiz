@@ -41,10 +41,12 @@ let progressBarWidth = 0;
 
 // Event Listeners //
 
-answerOne.addEventListener('click', checkAnswerOne);
-answerTwo.addEventListener('click', checkAnswerTwo);
-answerThree.addEventListener('click', checkAnswerThree);
-answerFour.addEventListener('click', checkAnswerFour);
+// Answer Buttons //
+
+for(let i = 0; i < answerButtons.length; i++) {
+    answerButtons[i].addEventListener('click', checkAnswer);
+}
+
 nextButton.addEventListener('click', nextQuestion);
 endButton.addEventListener('click', end);
 rulesButton.addEventListener('click', rules);
@@ -267,7 +269,6 @@ function showQuestion(currentQuestion) {
 
 function nextQuestion() {
 
-    // check if last question
     availableQuestions.shift();
     currentQuestion = availableQuestions[0];
     showQuestion(currentQuestion);
@@ -278,10 +279,9 @@ function nextQuestion() {
             answerButtons[i].classList.remove('incorrect');
         }
     }
-    answerOne.addEventListener('click', checkAnswerOne);
-    answerTwo.addEventListener('click', checkAnswerTwo);
-    answerThree.addEventListener('click', checkAnswerThree);
-    answerFour.addEventListener('click', checkAnswerFour);
+    for (let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].addEventListener('click', checkAnswer);
+    }
     nextButton.classList.add('hide');
     // Increment Score //
     questionCount.innerText = ++questionNumber;
@@ -309,43 +309,17 @@ function shuffle(availableQuestions) {
 
 // Check User Answer //
 
-function checkAnswerOne() {
-    if (answerOne.innerHTML === currentQuestion.correct) {
-        correct();
-        answerOne.classList.add('correct');
-    } else {
-        answerOne.classList.add('incorrect');
-        incorrect();
-    }
-}
-
-function checkAnswerTwo() {
-    if (answerTwo.innerHTML === currentQuestion.correct) {
-        correct();
-        answerTwo.classList.add('correct');
-    } else {
-        answerTwo.classList.add('incorrect');
-        incorrect();
-    }
-}
-
-function checkAnswerThree() {
-    if (answerThree.innerHTML === currentQuestion.correct) {
-        correct();
-        answerThree.classList.add('correct');
-    } else {
-        answerThree.classList.add('incorrect');
-        incorrect();
-    }
-}
-
-function checkAnswerFour() {
-    if (answerFour.innerHTML === currentQuestion.correct) {
-        correct();
-        answerFour.classList.add('correct');
-    } else {
-        answerFour.classList.add('incorrect');
-        incorrect();
+function checkAnswer() {
+    for (let i = 0; i < answerButtons.length; i++){
+        if(this.innerHTML === currentQuestion.correct) {
+            this.classList.add('correct');
+            correct();
+            return;
+        } else {
+            this.classList.add('incorrect');
+            incorrect();
+            return;
+        }
     }
 }
 
@@ -365,10 +339,9 @@ function correct() {
     clearInterval(intervalTimer);
     ++quizScore;
     score.innerText = quizScore;
-    answerOne.removeEventListener('click', checkAnswerOne);
-    answerTwo.removeEventListener('click', checkAnswerTwo);
-    answerThree.removeEventListener('click', checkAnswerThree);
-    answerFour.removeEventListener('click', checkAnswerFour);
+    for (let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].removeEventListener('click', checkAnswer);
+    }
     if (availableQuestions.length === 1){
         endButton.classList.remove('hide');
     } else {
@@ -388,10 +361,9 @@ function incorrect() {
     }
 
     clearInterval(intervalTimer);
-    answerOne.removeEventListener('click', checkAnswerOne);
-    answerTwo.removeEventListener('click', checkAnswerTwo);
-    answerThree.removeEventListener('click', checkAnswerThree);
-    answerFour.removeEventListener('click', checkAnswerFour);
+    for(let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].removeEventListener('click', checkAnswer);
+    }
     if (availableQuestions.length === 1){
         endButton.classList.remove('hide');
     } else {
