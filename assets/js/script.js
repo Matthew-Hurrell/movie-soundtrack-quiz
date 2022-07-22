@@ -18,7 +18,6 @@ const questionCount = document.getElementById('question-count');
 const endButton = document.getElementById('end-button');
 const endElement = document.getElementById('end-div');
 const endScore = document.getElementById('end-score');
-const replayButton = document.getElementById('replay-button');
 const homeButton = document.getElementById('home-button');
 const startButton = document.querySelector('#start-button');
 const rulesButton = document.getElementById('rules-button');
@@ -290,6 +289,7 @@ function nextQuestion() {
     progressBar.style.width = (questionNumber - 1) * 8.33 + '%';
     player.play();
     resetCountdownTimer();
+    audioControls();
 }
 
 // Question Randomizer //
