@@ -1,3 +1,4 @@
+const containerZero = document.querySelector('.container-0');
 const containerOne = document.querySelector('.container-1');
 const containerTwo = document.querySelector('.container-2');
 const player = document.getElementById('player');
@@ -19,6 +20,12 @@ const endElement = document.getElementById('end-div');
 const endScore = document.getElementById('end-score');
 const replayButton = document.getElementById('replay-button');
 const homeButton = document.getElementById('home-button');
+const startButton = document.querySelector('#start-button');
+const rulesButton = document.getElementById('rules-button');
+const unmuteElement = document.querySelector('.unmute-div');
+const introText = document.querySelector('.intro-text');
+const introTextElement = document.querySelector('.intro-text-div');
+const backButton = document.getElementById('back-button');
 
 // Answer Buttons //
 
@@ -41,9 +48,30 @@ answerThree.addEventListener('click', checkAnswerThree);
 answerFour.addEventListener('click', checkAnswerFour);
 nextButton.addEventListener('click', nextQuestion);
 endButton.addEventListener('click', end);
-
+rulesButton.addEventListener('click', rules);
+startButton.addEventListener('click', startGame);
 
 score.innerText = quizScore;
+
+// Rules //
+
+function rules() {
+    unmuteElement.classList.add('hide');
+    introText.classList.add('hide');
+    backButton.classList.remove('hide');
+    rulesButton.classList.add('hide');
+    startButton.classList.add('hide');
+    introTextElement.innerHTML = `<ul id=“rules-list”>
+	<li>There are twelve questions</li>
+	<li>You have 60 seconds per question to choose your answer</li>
+	<li>Each question has four answers, only one is correct</li>
+	<li>Click the play button to hear the audio for your question</li>
+	<li>You get one point for each correct answer</li>
+	<li>You can also use the audio control icons to pause, increase and decrease the audio volume</li>
+	<li>When the next button appears, click it to continue to the next question</li>
+ 	<li>When the end button appears, click it to end the quiz</li>
+</ul>`;
+}
 
 // Questions //
 
@@ -160,20 +188,32 @@ const questions = [
 
 // Audio Controls //
 
+function audioControls() {
+
+if (player.paused && player.currentTime > 0 && !player.ended) {
+
+    pause.classList.add('hide');
+    play.classList.remove('hide');
+
+} else {
+
+    play.classList.add('hide');
+    pause.classList.remove('hide');
+
+}
+
+}
+
+audioControls();
+
 play.addEventListener('click', () => {
     player.play();
+    audioControls();
 })
 
 pause.addEventListener('click', () => {
     player.pause();
-})
-
-volumeDown.addEventListener('click', () => {
-    player.volume -= 0.1;
-})
-
-volumeUp.addEventListener('click', () => {
-    player.volume += 0.1;
+    audioControls();
 })
 
 // Countdown Timer //
@@ -190,26 +230,28 @@ function countdownTimer() {
     }
 }
 
-let intervalTimer = setInterval(countdownTimer, 1000);
-
 function resetCountdownTimer() {
     timerElement.innerText = 60;
     timer = 59;
     intervalTimer = setInterval(countdownTimer, 1000);
 }
 
+let intervalTimer;
+
 // Start Game //
 
 function startGame() {
+    containerZero.classList.add('hide');
+    containerOne.classList.remove('hide');
     quizScore = 0;
     availableQuestions = [...questions];
     shuffle(availableQuestions);
     // Take first question in available questions array and put it in current question object //
     currentQuestion = availableQuestions[0];
     showQuestion(currentQuestion);
+    player.play();
+    intervalTimer = setInterval(countdownTimer, 1000);
 }
-
-startGame();
 
 // Display Current Question //
 
@@ -241,12 +283,13 @@ function nextQuestion() {
     answerTwo.addEventListener('click', checkAnswerTwo);
     answerThree.addEventListener('click', checkAnswerThree);
     answerFour.addEventListener('click', checkAnswerFour);
-    resetCountdownTimer();
     nextButton.classList.add('hide');
     // Increment Score //
     questionCount.innerText = ++questionNumber;
     // Increment Progress Bar //
     progressBar.style.width = (questionNumber - 1) * 8.33 + '%';
+    player.play();
+    resetCountdownTimer();
 }
 
 // Question Randomizer //

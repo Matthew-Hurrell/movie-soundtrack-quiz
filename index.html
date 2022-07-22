@@ -10,25 +10,74 @@
     <title>The Movie Soundtrack Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/008ae79857.js" crossorigin="anonymous"></script>
-    <script src="assets/js/index.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
-<body>
-    <div class="container-1">
-        <div class="title-div">
-            <h1 class="title">The Movie Soundtrack Quiz</h1>
+
+<body><div class="container-0">
+    <div class="title-div">
+        <h1 class="title">The Movie Soundtrack Quiz</h1>
+    </div>
+    <div class="unmute-div">
+        <h2 class="unmute">Make sure your volume is turned up!  <i class="fa-solid fa-volume-high"></i></h2>
+    </div>
+    <div class="intro-text-div">
+        <p class="intro-text">Are you ready to put your movie soundtrack knowledge to the ultimate test?</p>
+    </div>
+    <div class="buttons-div">
+        <button class="start btn" id="start-button">Start</button>
+        <button class="rules btn" id="rules-button">Rules</button>
+        <a href="index.html"><button class="btn hide" id="back-button">Back</button></a>
+    </div>
+
+</div>
+    <div class="container-1 hide">
+        <div id="score-progress-bar-div">
+            <div class="progress-bar-div">
+                <p class="progress-bar-text">Question <span id="question-count">1</span> out of 12</p>
+                <div id="progress-bar">
+                    <div id="progress-bar-inner"></div>
+                </div>
+            </div>
+            <div class="countdown-timer-div">
+                <p id="timer-text">Time Left: <span id="timer">60</span></p>
+            </div>
+            <div class="score-div">
+                <p class="score-text">Score</p>
+                <h2 id="score"></h2>
+            </div>
         </div>
-        <div class="unmute-div">
-            <h2 class="unmute">Make sure your volume is turned up!  <i class="fa-solid fa-volume-high"></i></h2>
+        <div id="question-div">
+            <h2 id="question">What movie is this track from?</h2>
         </div>
-        <div class="intro-text-div">
-            <p class="intro-text">Are you ready to put your movie soundtrack knowledge to the ultimate test?</p>
+        <div id="audio-div">
+            <audio src="assets/audio/one.mp3" id="player" class="hide"></audio>
+            <div class="audio-controls">
+                <button class="audio-button" id="play"><i class="fa-solid fa-play"></i></button>
+                <button class="audio-button" id="pause"><i class="fa-solid fa-pause"></i></button>
+            </div>
+        </div>
+        <div id="answers-div">
+            <button class="answer-button" id="answer-one">Answer 1</button>
+            <button class="answer-button" id="answer-two">Answer 2</button>
+            <button class="answer-button" id="answer-three">Answer 3</button>
+            <button class="answer-button" id="answer-four">Answer 4</button>
         </div>
         <div class="buttons-div">
-            <a href="quiz.html"><button class="start btn" id="start-button">Start</button></a>
-            <button class="rules btn" id="rules-button">Rules</button>
-            <a href="index.html"><button class="btn hide" id="back-button">Back</button></a>
+            <a href="index.html"><button class="btn" id="main-home-button">Home <i class="fa-solid fa-house"></i></button></a>
+            <button class="next btn hide" id="next-button">Next</button>
+            <button id="end-button" class="btn hide">End</button>
         </div>
-
+    </div>
+    <div class="container-2 hide">
+        <div id="end-div">
+            <div id="end-text-div">
+                <h1 id="end-score-text">Congratulations you scored <span id="end-score"></span></h1>
+            </div>
+        </div>
+        <div class="buttons-div">
+            <a href="quiz.html"><button class="btn" id="replay-button">Play Again</button></a>
+            <a href="index.html"><button class="btn" id="home-button">Home <i class="fa-solid fa-house"></i></button></a>
+        </div>
     </div>
     
 </body>

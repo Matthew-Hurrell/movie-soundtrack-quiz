@@ -20,7 +20,7 @@ body {
 
 /* Home Page */
 
-.container-1, .container-2 {
+.container-0, .container-1, .container-2 {
     background-color: rgba(255, 255, 255, 0.882);
     width: 600px;
     max-width: 80%;
