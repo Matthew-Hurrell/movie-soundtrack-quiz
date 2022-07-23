@@ -184,7 +184,143 @@ const questions = [
         answer3: 'Thor',
         answer4: 'The Avengers',
         correct: 'The Avengers' 
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'thirteen.mp3',
+        answer1: 'Batman',
+        answer2: 'Superman',
+        answer3: 'Ironman',
+        answer4: 'Spiderman',
+        correct: 'Batman'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'fourteen.mp3',
+        answer1: 'Tenet',
+        answer2: 'Inception',
+        answer3: 'Interstellar',
+        answer4: 'Shutter Island',
+        correct: 'Inception'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'fifteen.mp3',
+        answer1: 'The Goonies',
+        answer2: 'E.T',
+        answer3: 'Back To The Future',
+        answer4: 'Indiana Jones',
+        correct: 'Back To The Future'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'sixteen.mp3',
+        answer1: 'The Notebook',
+        answer2: 'Romeo and Juliet',
+        answer3: 'Me Before You',
+        answer4: 'Titanic',
+        correct: 'Titanic'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'seventeen.mp3',
+        answer1: 'Indiana Jones',
+        answer2: 'The Mummy',
+        answer3: 'The Great Escape',
+        answer4: 'National Treasure',
+        correct: 'Indiana Jones'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'eighteen.mp3',
+        answer1: 'James Bond',
+        answer2: 'Mission: Impossible',
+        answer3: 'Jack Reacher',
+        answer4: 'The Bourne Identity',
+        correct: 'Mission: Impossible'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'nineteen.mp3',
+        answer1: 'Scarface',
+        answer2: 'GoodFellas',
+        answer3: 'The Godfather',
+        answer4: 'Reservoir Dogs',
+        correct: 'The Godfather'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty.mp3',
+        answer1: 'Minority Report',
+        answer2: 'Equilibrium',
+        answer3: 'Blade Runner',
+        answer4: 'The Matrix',
+        correct: 'The Matrix'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-one.mp3',
+        answer1: 'Sherlock Holmes',
+        answer2: 'Murder on the Orient Express',
+        answer3: 'Enola Holmes',
+        answer4: 'Pirates of the Caribbean',
+        correct: 'Sherlock Holmes'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-two.mp3',
+        answer1: 'Labyrinth',
+        answer2: 'E.T',
+        answer3: 'Close Encounters Of The Third Kind',
+        answer4: 'Indiana Jones',
+        correct: 'E.T'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-three.mp3',
+        answer1: 'Ex Machina',
+        answer2: 'Total Recall',
+        answer3: 'Blade Runner',
+        answer4: '2001 A Space Odyssey',
+        correct: 'Blade Runner'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-four.mp3',
+        answer1: 'Mission: Impossible',
+        answer2: 'North By Northwest',
+        answer3: 'Die Hard',
+        answer4: 'James Bond',
+        correct: 'James Bond'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-five.mp3',
+        answer1: 'The Pink Panther',
+        answer2: 'Johnny English',
+        answer3: 'Ace Ventura Pet Detective',
+        answer4: 'Austin Powers',
+        correct: 'The Pink Panther'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-six.mp3',
+        answer1: 'The Avengers',
+        answer2: 'Spiderman',
+        answer3: 'Doctor Strange',
+        answer4: 'X-MEN',
+        correct: 'Spiderman'
+    },
+    {
+        question: 'What movie is this track from?',
+        audio: 'twenty-seven.mp3',
+        answer1: 'Zoolander',
+        answer2: 'Dodgeball',
+        answer3: 'Austin Powers',
+        answer4: 'Anchorman',
+        correct: 'Austin Powers'
     }
+
 ];
 
 // Audio Controls //
