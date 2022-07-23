@@ -478,7 +478,7 @@ function correct() {
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].removeEventListener('click', checkAnswer);
     }
-    if (availableQuestions.length === 1){
+    if (availableQuestions.length === 16){
         endButton.classList.remove('hide');
     } else {
         nextButton.classList.remove('hide');
@@ -500,7 +500,7 @@ function incorrect() {
     for(let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].removeEventListener('click', checkAnswer);
     }
-    if (availableQuestions.length === 1){
+    if (availableQuestions.length === 16){
         endButton.classList.remove('hide');
     } else {
         nextButton.classList.remove('hide');
