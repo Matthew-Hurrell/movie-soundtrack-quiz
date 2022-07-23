@@ -1,6 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-LIVE LINK - ![Link to live site](https://matthew-hurrell.github.io/movie-soundtrack-quiz/)
+LIVE LINK - [Link to live site](https://matthew-hurrell.github.io/movie-soundtrack-quiz/)
 
 Welcome Matthew Hobbs-Hurrell,
 
