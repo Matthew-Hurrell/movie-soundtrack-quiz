@@ -25,7 +25,6 @@ const unmuteElement = document.querySelector('.unmute-div');
 const introText = document.querySelector('.intro-text');
 const introTextElement = document.querySelector('.intro-text-div');
 const backButton = document.getElementById('back-button');
-const quoteFigure = document.getElementById('quote-figure');
 const movieQuote = document.getElementById('movie-end-quote');
 const quoteCaption = document.getElementById('quote-caption');
 
