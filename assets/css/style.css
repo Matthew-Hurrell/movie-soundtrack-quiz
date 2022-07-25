@@ -1,3 +1,7 @@
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
 /* Global */
 
 *, *::before, *::after {
@@ -5,6 +9,7 @@
 }
 
 body {
+    font-family: 'Lato', sans-serif;
     padding: 0;
     margin: 0;
     width: 100vw;
@@ -62,47 +67,70 @@ body {
 }
 
 #title-one, #title-two {
-    max-width: 80%;
+    max-width: 90%;
 }
 
-#buttons-div {
-    width: 100%;
+.buttons-div {
+    width: 50%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .btn {
     margin: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0.5rem;
     text-align: center;
-    color: white;
-    background: blue;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .start {
-    background: black;
-    color: white;
+    background: linear-gradient(#64c550, #408e39);
+    color: rgb(255, 255, 255);
 }
 
-.rules {
-    background: white;
-    color: black;
+.rules, #home-button {
+    background: linear-gradient(#6496e6, #1d50b6);
+    color: rgb(255, 255, 255);
 }
 
 .start:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 green;
+    box-shadow: 0 0.4rem 1.4rem 0 #479144;
 }
 
-.rules:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 orange;
+.rules:hover, #back-button:hover, #home-button:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 #1d50b6;
 }
 
 .btn:hover {
     transition: transform 150ms;
     transform: scale(1.03);
+}
+
+.audio-test {
+    font-size: 1.3rem;
+    background-color: red;
+    padding: 1rem 0.8rem;
+    border-radius: 30px;
+    color: white;
+    margin: 0.5rem;
+}
+
+.volume-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.intro-text {
+    margin-bottom: 1.5rem;
+}
+
+#back-button {
+    background: linear-gradient(#6496e6, #1d50b6);
+    color: rgb(255, 255, 255);
 }
 
 /* Quiz */
@@ -121,16 +149,25 @@ body {
     align-items: center;
 }
 
-.audio-button {
-    background: none;
-    font-size: 2.5rem;
-    padding: 0.5rem;
-    border: none;
-}
-
 .audio-button:hover {
     transition: transform 150ms;
-    transform: scale(1.04);
+    transform: scale(1.05);
+    box-shadow: 0 0.4rem 1rem 0 #1d50b6;
+}
+
+#play, #pause {
+    font-size: 3rem;
+    padding: 0.8rem 1.5rem;
+    border: 5px #1d50b6 solid;
+    background-color: #6496e672;
+    border-radius: 3rem;
+    text-align: center;
+    vertical-align: middle;
+    color: #1d50b6;
+}
+
+#play {
+    padding: 0.8rem 1.3rem;
 }
 
 
@@ -187,16 +224,6 @@ body {
 .answer-button:hover {
     transition: transform 150ms;
     transform: scale(1.02);
-}
-
-/* Audio Control Buttons */
-
-.fa-play {
-    color: green;
-}
-
-.fa-pause {
-    color: orange;
 }
 
 /* Correct and Incorrect Button Styling */

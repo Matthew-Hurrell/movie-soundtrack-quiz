@@ -63,13 +63,12 @@ function rules() {
     introTextElement.innerHTML = `<ul id=“rules-list”>
 	<li>There are twelve questions</li>
 	<li>You have 60 seconds per question to choose your answer</li>
-	<li>Each question has four answers, only one is correct</li>
-	<li>Click the play button to hear the audio for your question</li>
+	<li>Audio will autoplay for each question</li>
+    <li>Use the button to pause or play the audio</li>
 	<li>You get one point for each correct answer</li>
-	<li>You can also use the audio control icons to pause, increase and decrease the audio volume</li>
 	<li>When the next button appears, click it to continue to the next question</li>
  	<li>When the end button appears, click it to end the quiz</li>
-</ul>`;
+    </ul>`;
 }
 
 // Questions //
@@ -106,9 +105,9 @@ const questions = [
         question: 'What movie is this track from?',
         audio: 'four.mp3',
         answer1: 'Star Wars: Attack of the Clones',
-        answer2: 'Star Wars: The Phantom Menace',
-        answer3: 'Star Wars: A New Hope',
-        answer4: 'Star Wars: The Empire Strikes Back',
+        answer2: 'Star Trek',
+        answer3: 'Willow',
+        answer4: 'Arrival',
         correct: 'Star Wars: Attack of the Clones'
     },
     {
