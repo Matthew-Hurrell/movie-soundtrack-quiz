@@ -23,18 +23,6 @@ body {
     align-items: center;
 }
 
-/* Home Page */
-
-.container-0, .container-1, .container-2 {
-    background-color: rgba(255, 255, 255, 0.882);
-    width: 600px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .outer-container {
     width: 600px;
     max-width: 80%;
@@ -54,6 +42,22 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Home Page */
+
+/* Containers */
+
+.container-0, .container-1, .container-2 {
+    background-color: rgba(255, 255, 255, 0.882);
+    width: 600px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titles */
+
 .title-div {
     display: flex;
     justify-content: center;
@@ -62,13 +66,15 @@ body {
     width: 100%;
 }
 
+#title-one, #title-two {
+    max-width: 90%;
+}
+
 #title-two {
     margin-top: 0.5rem;
 }
 
-#title-one, #title-two {
-    max-width: 90%;
-}
+/* Buttons */
 
 .buttons-div {
     width: 50%;
@@ -110,14 +116,12 @@ body {
     transform: scale(1.03);
 }
 
-.audio-test {
-    font-size: 1.3rem;
-    background-color: red;
-    padding: 1rem 0.8rem;
-    border-radius: 30px;
-    color: white;
-    margin: 0.5rem;
+#back-button {
+    background: linear-gradient(#6496e6, #1d50b6);
+    color: rgb(255, 255, 255);
 }
+
+/* Intro Paragraphs */
 
 .volume-text {
     font-size: 1.5rem;
@@ -129,16 +133,15 @@ body {
     margin-bottom: 1.5rem;
 }
 
-#back-button {
-    background: linear-gradient(#6496e6, #1d50b6);
-    color: rgb(255, 255, 255);
-}
+/* Rules */
 
 li {
     margin-bottom: 0.5rem;
 }
 
 /* Quiz */
+
+/* Audio */
 
 #audio-div {
     width: 100%;
@@ -180,6 +183,7 @@ li {
     padding: 0.8rem 1.4rem;
 }
 
+/* Answers */
 
 #answers-div {
     width: 100%;
@@ -188,6 +192,25 @@ li {
     gap: 10px;
     margin: 20px 0;
 }
+
+.answer-button {
+    text-align: left;
+    padding: 1.2rem;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px black solid;
+}
+
+.answer-button:hover {
+    transition: transform 150ms;
+    transform: scale(1.02);
+    box-shadow: 0 0.4rem 0.5rem 0 #b8b8b8;
+    background-color: #e9f0ff;
+}
+
+/* Score */
 
 #score-progress-bar-div {
     width: 100%;
@@ -212,6 +235,8 @@ li {
     margin-bottom: 0;
     margin-top: 0.7rem;
 }
+
+/* Progress Bar */
 
 .progress-bar-text {
     margin-top: 0.5rem;
@@ -240,22 +265,7 @@ li {
     width: 0%;
 }
 
-.answer-button {
-    text-align: left;
-    padding: 1.2rem;
-    background-color: white;
-    color: black;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1px black solid;
-}
-
-.answer-button:hover {
-    transition: transform 150ms;
-    transform: scale(1.02);
-    box-shadow: 0 0.4rem 0.5rem 0 #b8b8b8;
-    background-color: #e9f0ff;
-}
+/* Countdown Timer */
 
 .countdown-timer-div {
     width: 25%;
