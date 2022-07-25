@@ -86,21 +86,21 @@ body {
     cursor: pointer;
 }
 
-.start {
+.start, #next-button, #end-button {
     background: linear-gradient(#64c550, #408e39);
     color: rgb(255, 255, 255);
 }
 
-.rules, #home-button {
+.rules, #home-button, #second-home-button {
     background: linear-gradient(#6496e6, #1d50b6);
     color: rgb(255, 255, 255);
 }
 
-.start:hover {
+.start:hover, #next-button:hover, #end-button:hover {
     box-shadow: 0 0.4rem 1.4rem 0 #479144;
 }
 
-.rules:hover, #back-button:hover, #home-button:hover {
+.rules:hover, #back-button:hover, #home-button:hover, #second-home-button:hover {
     box-shadow: 0 0.4rem 1.4rem 0 #1d50b6;
 }
 
@@ -152,22 +152,27 @@ body {
 .audio-button:hover {
     transition: transform 150ms;
     transform: scale(1.05);
-    box-shadow: 0 0.4rem 1rem 0 #1d50b6;
+    box-shadow: 0 0.4rem 1rem 0 #424242;
 }
 
 #play, #pause {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 0.8rem 1.5rem;
-    border: 5px #1d50b6 solid;
-    background-color: #6496e672;
+    border: 5px #000000 solid;
+    background-color: #ffffff72;
     border-radius: 3rem;
     text-align: center;
     vertical-align: middle;
-    color: #1d50b6;
+    color: #000000;
+}
+
+.fa-play {
+    position: relative;
+    left: 4px;
 }
 
 #play {
-    padding: 0.8rem 1.3rem;
+    padding: 0.8rem 1.4rem;
 }
 
 
@@ -184,60 +189,102 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
+    margin-bottom: 0.5rem;
 }
 
 .score-div {
-    text-align: center;
+    text-align: end;
+    width: 25%;
 }
 
-.score {
+#score {
     margin: 0;
     font-size: 2rem;
+    margin-right: 0.5rem;
 }
 
 .score-text {
+    margin-bottom: 0;
+    margin-top: 0.7rem;
+}
+
+.progress-bar-text {
+    margin-top: 0.5rem;
     margin-bottom: 0;
 }
 
 .progress-bar-div {
     text-align: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #progress-bar {
     width: 200px;
-    border: solid 1px black;
+    border: solid 2px black;
     height: 15px;
     border-radius: 5px;
 }
 
 #progress-bar-inner {
-    background-color: green;
+    background-color: #6c398e;
     height: 100%;
     width: 0%;
 }
 
 .answer-button {
     text-align: left;
-    padding: 1rem;
+    padding: 1.2rem;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-radius: 10px;
 }
 
 .answer-button:hover {
     transition: transform 150ms;
     transform: scale(1.02);
+    box-shadow: 0 0.4rem 0.5rem 0 #b8b8b8;
+    background-color: #e9f0ff;
+}
+
+.countdown-timer-div {
+    width: 25%;
 }
 
 /* Correct and Incorrect Button Styling */
 
 .correct {
-    background-color: green;
+    background: linear-gradient(#64c550, #408e39);
+    color: white;
 }
 
 .incorrect {
-    background-color: red;
+    background: linear-gradient(#ea1e1e, #c40000);
+    color: white;
 }
 
 /* Hide */
 
 .hide {
     display: none;
+}
+
+/* Quote Figure */
+
+#quote-figure {
+    text-align: center;
+}
+
+#movie-end-quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+#end-score-text {
+    text-align: center;
 }

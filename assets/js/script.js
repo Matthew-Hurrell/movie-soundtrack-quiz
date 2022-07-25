@@ -549,7 +549,6 @@ function incorrect() {
             answerButtons[i].classList.add('correct');
         } 
     }
-
     clearInterval(intervalTimer);
     for(let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].removeEventListener('click', checkAnswer);
