@@ -13,75 +13,81 @@
     <script src="assets/js/script.js" defer></script>
 </head>
 
-<body><div class="container-0">
-    <div class="title-div">
-        <img src="assets/images/title-1.png" alt="the movie soundtrack quiz title" id="title-one">
-        <img src="assets/images/title-2.png" alt="the movie soundtrack quiz title" id="title-two">
-    </div>
-    <div class="unmute-div">
-        <h2 class="unmute">Make sure your volume is turned up!  <i class="fa-solid fa-volume-high"></i></h2>
-    </div>
-    <div class="intro-text-div">
-        <p class="intro-text">Are you ready to put your movie soundtrack knowledge to the ultimate test?</p>
-    </div>
-    <div class="buttons-div">
-        <button class="start btn" id="start-button">Start</button>
-        <button class="rules btn" id="rules-button">Rules</button>
-        <a href="index.html"><button class="btn hide" id="back-button">Back</button></a>
-    </div>
+<body>
+    <div class="outer-container">
+        <div class="border"></div>
+        <div class="container-0">
+            
+            <div class="title-div">
+                <img src="assets/images/title-1.png" alt="the movie soundtrack quiz title" id="title-one">
+                <img src="assets/images/title-2.png" alt="the movie soundtrack quiz title" id="title-two">
+            </div>
+            <div class="unmute-div">
+                <h2 class="unmute">Make sure your volume is turned up!  <i class="fa-solid fa-volume-high"></i></h2>
+            </div>
+            <div class="intro-text-div">
+                <p class="intro-text">Are you ready to put your movie soundtrack knowledge to the ultimate test?</p>
+            </div>
+            <div class="buttons-div">
+                <button class="start btn" id="start-button">Start</button>
+                <button class="rules btn" id="rules-button">Rules</button>
+                <a href="index.html"><button class="btn hide" id="back-button">Back</button></a>
+            </div>
 
-</div>
-    <div class="container-1 hide">
-        <div id="score-progress-bar-div">
-            <div class="progress-bar-div">
-                <p class="progress-bar-text">Question <span id="question-count">1</span> out of 12</p>
-                <div id="progress-bar">
-                    <div id="progress-bar-inner"></div>
+        </div>
+        <div class="container-1 hide">
+            <div id="score-progress-bar-div">
+                <div class="progress-bar-div">
+                    <p class="progress-bar-text">Question <span id="question-count">1</span> out of 12</p>
+                    <div id="progress-bar">
+                        <div id="progress-bar-inner"></div>
+                    </div>
+                </div>
+                <div class="countdown-timer-div">
+                    <p id="timer-text">Time Left: <span id="timer">60</span></p>
+                </div>
+                <div class="score-div">
+                    <p class="score-text">Score</p>
+                    <h2 id="score"></h2>
                 </div>
             </div>
-            <div class="countdown-timer-div">
-                <p id="timer-text">Time Left: <span id="timer">60</span></p>
+            <div id="question-div">
+                <h2 id="question">What movie is this track from?</h2>
             </div>
-            <div class="score-div">
-                <p class="score-text">Score</p>
-                <h2 id="score"></h2>
+            <div id="audio-div">
+                <audio src="assets/audio/one.mp3" id="player" class="hide"></audio>
+                <div class="audio-controls">
+                    <button class="audio-button" id="play"><i class="fa-solid fa-play"></i></button>
+                    <button class="audio-button" id="pause"><i class="fa-solid fa-pause"></i></button>
+                </div>
             </div>
-        </div>
-        <div id="question-div">
-            <h2 id="question">What movie is this track from?</h2>
-        </div>
-        <div id="audio-div">
-            <audio src="assets/audio/one.mp3" id="player" class="hide"></audio>
-            <div class="audio-controls">
-                <button class="audio-button" id="play"><i class="fa-solid fa-play"></i></button>
-                <button class="audio-button" id="pause"><i class="fa-solid fa-pause"></i></button>
+            <div id="answers-div">
+                <button class="answer-button" id="answer-one">Answer 1</button>
+                <button class="answer-button" id="answer-two">Answer 2</button>
+                <button class="answer-button" id="answer-three">Answer 3</button>
+                <button class="answer-button" id="answer-four">Answer 4</button>
             </div>
-        </div>
-        <div id="answers-div">
-            <button class="answer-button" id="answer-one">Answer 1</button>
-            <button class="answer-button" id="answer-two">Answer 2</button>
-            <button class="answer-button" id="answer-three">Answer 3</button>
-            <button class="answer-button" id="answer-four">Answer 4</button>
-        </div>
-        <div class="buttons-div">
-            <a href="index.html"><button class="btn" id="home-button">Home <i class="fa-solid fa-house"></i></button></a>
-            <button class="next btn hide" id="next-button">Next</button>
-            <button id="end-button" class="btn hide">End</button>
-        </div>
-    </div>
-    <div class="container-2 hide">
-        <div id="end-div">
-            <div id="end-text-div">
-                <h1 id="end-score-text">Congratulations your score is: <span id="end-score"></span></h1>
-                <figure id="quote-figure" >
-                    <blockquote id="movie-end-quote"></blockquote>
-                    <figcaption id="quote-caption"></figcaption>
-                </figure>
+            <div class="buttons-div">
+                <a href="index.html"><button class="btn" id="home-button">Home <i class="fa-solid fa-house"></i></button></a>
+                <button class="next btn hide" id="next-button">Next</button>
+                <button id="end-button" class="btn hide">End</button>
             </div>
         </div>
-        <div class="buttons-div">
-            <a href="index.html"><button class="btn" id="go-back-button">Home <i class="fa-solid fa-house"></i></button></a>
+        <div class="container-2 hide">
+            <div id="end-div">
+                <div id="end-text-div">
+                    <h1 id="end-score-text">Congratulations your score is: <span id="end-score"></span></h1>
+                    <figure id="quote-figure" >
+                        <blockquote id="movie-end-quote"></blockquote>
+                        <figcaption id="quote-caption"></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="buttons-div">
+                <a href="index.html"><button class="btn" id="go-back-button">Home <i class="fa-solid fa-house"></i></button></a>
+            </div>
         </div>
+        <div class="border"></div>
     </div>
     
 </body>
