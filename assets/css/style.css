@@ -351,6 +351,73 @@ li {
     }
 }
 
+@media screen and (max-width: 360px) {
+
+    .volume-text {
+        font-size: 1.2rem;
+    }
+
+    #rules-list {
+        padding-left: 1.4rem;
+    }
+
+    li {
+        margin-bottom: 0.7rem;
+    }
+
+    body {
+        height: 120vh;
+    }
+
+    .buttons-div {
+        width: 100%;
+    }
+
+    #timer-text, .progress-bar-text, .score-text {
+        font-size: 1rem;
+    }
+
+    #score {
+        font-size: 1.8rem;
+    }
+
+    #question {
+        font-size: 1.5rem;
+    }
+
+    #play, #pause {
+        font-size: 2.5rem;
+        padding: 0.7rem 1.3rem;
+    }
+    
+    #play {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .answer-button {
+        font-size: 1rem;
+    }
+
+    #end-score-text {
+        font-size: 1.5rem;
+    }
+
+    #quote-figure, #movie-end-quote {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #movie-end-quote {
+        font-size: 1.3rem;
+    }
+
+    figcaption {
+        font-size: 1rem;
+    }
+
+}
+
+
 @media screen and (max-width: 320px) {
 
     .border {
@@ -396,7 +463,6 @@ li {
 
     #score-progress-bar-div {
         padding: 0;
-
     }
 
     .score-text {
@@ -424,10 +490,6 @@ li {
         font-size: 1.1rem;
     }
 
-    .buttons-div {
-        width: 100%;
-    }
-
     #end-button {
         font-size: 1.1rem;
     }
@@ -436,8 +498,21 @@ li {
         font-size: 1.3rem;
     }
 
-    #movie-end-quote, #quote-caption {
+    #movie-end-quote {
         font-size: 1.1rem;
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+    }
+
+    #play, #pause {
+        font-size: 2rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    #play {
+        padding: 0.6rem 1.1rem;
     }
 
 }
