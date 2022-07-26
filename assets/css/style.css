@@ -25,7 +25,7 @@ body {
 
 .outer-container {
     width: 600px;
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +54,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 /* Titles */
@@ -127,10 +128,12 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .intro-text {
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 /* Rules */
@@ -271,6 +274,12 @@ li {
     width: 25%;
 }
 
+/* Question */
+
+#question {
+    text-align: center;
+}
+
 /* Correct and Incorrect Button Styling */
 
 .correct {
@@ -303,4 +312,132 @@ li {
 
 #end-score-text {
     text-align: center;
+}
+
+/* Responsiveness */
+
+/* Super Wide */
+
+@media screen and (max-width: 1300px) {
+
+    body {
+        height: 110vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        height: 150vh;
+        align-items: flex-start;
+    }
+
+    .outer-container {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .border {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .border {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .border {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+
+    .volume-text {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+
+    #start-button, #rules-button {
+        font-size: 1.1rem;
+    }
+
+    #rules-list {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
+
+    #back-button {
+        font-size: 1.1rem;
+    }
+
+    li {
+        margin-bottom: 0.7rem;
+    }
+
+    #timer-text {
+        font-size: 0.9rem;
+    }
+
+    .progress-bar-text {
+        font-size: 0.9rem;
+    }
+
+    #score-progress-bar-div {
+        padding: 0;
+
+    }
+
+    .score-text {
+        font-size: 0.9rem;
+    }
+
+    #score {
+        font-size: 1.7rem;
+    }
+
+    #question {
+        font-size: 1.3rem;
+    }
+
+    .answer-button {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #home-button, #second-home-button {
+        font-size: 1.1rem;
+    }
+
+    #next-button {
+        font-size: 1.1rem;
+    }
+
+    .buttons-div {
+        width: 100%;
+    }
+
+    #end-button {
+        font-size: 1.1rem;
+    }
+
+    #end-score-text {
+        font-size: 1.3rem;
+    }
+
+    #movie-end-quote, #quote-caption {
+        font-size: 1.1rem;
+    }
+
 }

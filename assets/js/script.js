@@ -83,7 +83,7 @@ function rules() {
     backButton.classList.remove('hide');
     rulesButton.classList.add('hide');
     startButton.classList.add('hide');
-    introTextElement.innerHTML = `<ul id=“rules-list”>
+    introTextElement.innerHTML = `<ul id=rules-list>
 	<li>There are twelve questions</li>
 	<li>You have 60 seconds per question to choose your answer</li>
 	<li>Audio will autoplay for each question</li>
