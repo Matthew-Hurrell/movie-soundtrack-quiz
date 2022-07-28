@@ -94,7 +94,9 @@ The title font is an image generated from [1001 Fonts](https://www.1001fonts.com
 
 * ### Colour Scheme 
 
-The colour scheme used for The Movie Soundtrack Quiz is a combination of whites and blacks for text elements with blues and greens for buttons. The container elements are a slightly transparent white which enables the background to be just visible behind. Navigational button elements are blue or green with a linear gradient into a darker shade at the bottom. They also feature white text to provide better contrast. Answer buttons are simply white with black text. When hovered over the background changes to a faint blue. There are also classes for correct and incorrect that change the background colour of the answer buttons depending on the user choice. An incorrect answer changes the background colour to a linear gradient of red and a correct answer changes the background to a linear gradient of green. The container upper and lower border features multi-coloured film strips which adds some bright colour into the page. The progress bar features a purple strip which adds a new colour into the page palette. The background image is a multi-coloured collage of movie posters which is very eye catching. A white linear gradient was added to the image to dull the colours slightly and to make it less distracting for the user. 
+The colour scheme used for The Movie Soundtrack Quiz is a combination of whites and blacks for text elements with blues and greens for buttons. The colours used for the quiz are intended to convey meaning and provide a visual aid to the user. Red is used on incorrect answers and green on correct answers to display that outcome to the user in an easy to understand way. 
+
+The container elements are a slightly transparent white which enables the background to be just visible behind. Navigational button elements are blue or green with a linear gradient into a darker shade at the bottom. They also feature white text to provide better contrast. Answer buttons are simply white with black text so they are easy to read. But when hovered over the button background changes to a faint blue. There are also classes for correct and incorrect that change the background colour of the answer buttons depending on the user choice. An incorrect answer changes the background colour to a linear gradient of red and a correct answer changes the background to a linear gradient of green. The container upper and lower border features multi-coloured film strips which adds some bright colour into the page. The progress bar features a purple strip which adds a new colour into the page palette and draws the users attention. The background image is a multi-coloured collage of movie posters which is very eye catching. A white linear gradient was added to the image to dull the colours slightly and to make it less distracting for the user. 
 
 ![The Movie Soundtrack Quiz Colour Palette](assets/images/readme-images/colour-palette.png)
 
@@ -102,7 +104,66 @@ The colour scheme used for The Movie Soundtrack Quiz is a combination of whites 
 
 # Features
 
+The Movie Soundtrack Quiz contains many features that were designed to enhance the user experience. There are also many potential features that could be added and expanded on in the future. The page features are designed to conform to the best practices of user experience design and accessibility.
+
 ## Existing Features
+
+### Home Page
+
+The home page is the main landing page of The Movie Soundtrack Quiz. It is displayed first to the user when they open or refresh the page. The objective of this section is to provide the user with a clear purpose to the intentions of the page in an appealing and eye catching way. Content is simple but colourful to encourage further interaction from the user.
+
+![The Movie Soundtrack Quiz Home Page](assets/images/readme-images/home-page.png)
+
+* ### Background
+
+The background is used throughout all sections of the site to provide consistency. The background is an image of a large collage of movie posters which was chosen to help to convey the theme of the quiz to the user. The original image was too bright for a background image so a white linear gradient was added to fade the colours slightly to make them less distracting to the user.
+
+* ### Border
+
+Another element reused throughout the site is the border top and bottom. These borders are images of multi-coloured film tape. They were chosen to further convey the theme of the site to the user in a visual way. The borders are colourful and help to draw the users eyes into the middle of the screen. The borders were just added to the top and bottom of the main section so as not to be too distracting. The design is simple yet visually appealing.
+
+![Border](assets/images/readme-images/border.png)
+
+* ### Container
+
+All the interactive elements of the site are positioned within the central container. This container is centralised into the middle of the screen on larger screens and is responsive on smaller screen sizes. The container has a white background which is slightly transparent to allow a small amount of the background to be seen. The container features a solid black border with a faint border around the edge and borders. A simple white background was used to provide suitable readability and contrast to the text elements. 
+
+![Container](assets/images/readme-images/container.png)
+
+* ### Title
+
+The main title is displayed on the landing page and is hidden in the following sections. The font is a form of word-art with a movie theme. The font is bold, capitalised and eye catching. The title is an image which is centralised in the container using flex box. The image scales down on smaller screen sizes.
+
+![Title](assets/images/readme-images/title.png)
+
+* ### Text
+
+There are two text elements on the landing page. The first element is a reminder to the user to check that their volume is turned up. This is a very important element as the quiz is very reliant on audio. It's crucial to display this visual reminder to the user first if they intend on starting the quiz. 
+The second text element is a brief sentence which further conveys the intention of the site to the user. Text content is kept to a minimum to avoid clutter and confusion. 
+
+![Text Content](assets/images/readme-images/text-content.png)
+
+* ### Buttons
+
+There are two buttons displayed on the main landing page of the site - start and rules. Navigation is kept simple to avoid confusion. The start button is coloured green with a linear gradient with white text. The rules button is coloured blue with the same linear gradient and white text. The hover effect scales up the buttons by 1.05 and adds a shadow with matching colour behind the buttons. Borders for the buttons are 1 pixel, solid and black. When interacted with, the start button starts the quiz by triggering the start javascript function. It also hides the first container and displays the second container with the quiz elements. The rules button hides the buttons and the bold text element and adds an unordered list of the rules into the other text element using javascript. It also displays a back button with the same styling as the rules button which returns the user back to the main loading page.
+
+![Buttons](assets/images/readme-images/buttons.png)
+
+![Start Button](assets/images/readme-images/start-button.png)
+
+![Rules Button](assets/images/readme-images/rules-button.png)
+
+![Back Button](assets/images/readme-images/back-button.png)
+
+* ### Rules 
+
+The rules text element is added using javascript when the rules button is clicked on the main landing page. It is a simple unordered list of clear rules which helps the user understand the nature of the quiz before starting. Helpful information about what to expect during the quiz is displayed here as well as a back button to navigate back to the main landing page when the user is ready to start.
+
+![Back Button](assets/images/readme-images/rules.png)
+
+### Quiz
+
+### End
 
 ## Future Features
 
