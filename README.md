@@ -341,13 +341,27 @@ The Movie Soundtrack Quiz has been rigorously tested throughout its development 
 
 ## Validator Tests
 
-[The W3C HTML Markup Validation Service](https://validator.w3.org/) [The W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/) [JSHint Javascript Validation Service](https://jshint.com/)
+The HTML document index.html was tested using [The W3C HTML Markup Validation Service](https://validator.w3.org/) and passed showing no errors or warnings.
+
+![HTML Test](assets/images/readme-images/html-test.png)
+
+The CSS document style.css was tested using [The W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/) and passed showing no errors.
+
+![CSS Test](assets/images/readme-images/css-test.png)
+
+The JavaScript document script.js was tested using [JSHint Javascript Validation Service](https://jshint.com/) and passed showing no errors or warnings.
+
+![JavaScript Test](assets/images/readme-images/javascript-test.png)
 
 [Back to top](<#contents>)
 
 ## Responsiveness Tests
 
-[Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) [Am I Responsive](https://ui.dev/amiresponsive) [Responsive Design Checker](https://responsivedesignchecker.com/). 
+The Movie Soundtrack Quiz has been tested for responsiveness on multiple devices and through [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/), [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive Design Checker](https://responsivedesignchecker.com/). No errors in layout were found. 
+
+![The Movie Soundtrack Quiz Responsive Design](assets/images/readme-images/responsive.png)
+
+
 
 [Back to top](<#contents>)
 

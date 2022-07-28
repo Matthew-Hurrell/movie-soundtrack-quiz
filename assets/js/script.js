@@ -12,9 +12,6 @@ const pause = document.getElementById('pause');
 
 // Progress Bar
 const progressBar = document.getElementById('progress-bar-inner');
-const progressBarText = document.getElementsByClassName('progress-bar-text');
-
-// Question Count
 const questionCount = document.getElementById('question-count');
 
 // Score
@@ -57,7 +54,6 @@ let currentQuestion = {};
 let availableQuestions = [];
 let quizScore = 0;
 let questionNumber = 1;
-let progressBarWidth = 0;
 
 /* Event Listeners */
 
@@ -410,7 +406,7 @@ const quotes = [
         quote: `“Made it, Ma. Top of the world!”`,
         caption: 'White Heat (1949)'
     }
-]
+];
 
 /* Audio Controls */
 
@@ -431,12 +427,12 @@ audioControls();
 play.addEventListener('click', () => {
     player.play();
     audioControls();
-})
+});
 
 pause.addEventListener('click', () => {
     player.pause();
     audioControls();
-})
+});
 
 /* Countdown Timer */
 
