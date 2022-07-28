@@ -20,7 +20,28 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
     * [Typography](<#typography>)
     * [Colour Scheme](<#colour-scheme>)
 * [**Features**](<#features>)
-   
+    * [**Existing Features](<#existing-features>)
+    * [**Home Page**](<#home-page>)
+        * [Background](<#background>)
+        * [Border](<#border>)
+        * [Container](<#container>)
+        * [Title](<#title>)
+        * [Text](<#text>)
+        * [Buttons](<#buttons>)
+        * [Rules](<#rules>)
+    * [**Quiz**](<#quiz>)
+        * [Countdown Timer](<#countdown-timer>)
+        * [Progress Bar](<#progress-bar>)
+        * [Score Counter](<#score-counter>)
+        * [Question](<#question>)
+        * [Audio](<#audio>)
+        * [Play and Pause Icons](<#play-and-pause-icons>)
+        * [Answer Buttons](<#answer-buttons>)
+        * [Navigational Buttons](<#navigational-buttons>)
+    * [**End**](<#end>)
+        * [Final Score Display](<#final-score-display>)
+        * [Quote](<#quote>)
+        * [Home Button](<#home-button>)
     * [**Future Features**](<#future-features>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
@@ -114,9 +135,13 @@ The home page is the main landing page of The Movie Soundtrack Quiz. It is displ
 
 ![The Movie Soundtrack Quiz Home Page](assets/images/readme-images/home-page.png)
 
+[Back to top](<#contents>)
+
 * ### Background
 
 The background is used throughout all sections of the site to provide consistency. The background is an image of a large collage of movie posters which was chosen to help to convey the theme of the quiz to the user. The original image was too bright for a background image so a white linear gradient was added to fade the colours slightly to make them less distracting to the user.
+
+[Back to top](<#contents>)
 
 * ### Border
 
@@ -124,11 +149,15 @@ Another element reused throughout the site is the border top and bottom. These b
 
 ![Border](assets/images/readme-images/border.png)
 
+[Back to top](<#contents>)
+
 * ### Container
 
 All the interactive elements of the site are positioned within the central container. This container is centralised into the middle of the screen on larger screens and is responsive on smaller screen sizes. The container has a white background which is slightly transparent to allow a small amount of the background to be seen. The container features a solid black border with a faint border around the edge and borders. A simple white background was used to provide suitable readability and contrast to the text elements. 
 
 ![Container](assets/images/readme-images/container.png)
+
+[Back to top](<#contents>)
 
 * ### Title
 
@@ -136,12 +165,16 @@ The main title is displayed on the landing page and is hidden in the following s
 
 ![Title](assets/images/readme-images/title.png)
 
+[Back to top](<#contents>)
+
 * ### Text
 
 There are two text elements on the landing page. The first element is a reminder to the user to check that their volume is turned up. This is a very important element as the quiz is very reliant on audio. It's crucial to display this visual reminder to the user first if they intend on starting the quiz. 
 The second text element is a brief sentence which further conveys the intention of the site to the user. Text content is kept to a minimum to avoid clutter and confusion. 
 
 ![Text Content](assets/images/readme-images/text-content.png)
+
+[Back to top](<#contents>)
 
 * ### Buttons
 
@@ -155,15 +188,113 @@ There are two buttons displayed on the main landing page of the site - start and
 
 ![Back Button](assets/images/readme-images/back-button.png)
 
+[Back to top](<#contents>)
+
 * ### Rules 
 
 The rules text element is added using javascript when the rules button is clicked on the main landing page. It is a simple unordered list of clear rules which helps the user understand the nature of the quiz before starting. Helpful information about what to expect during the quiz is displayed here as well as a back button to navigate back to the main landing page when the user is ready to start.
 
-![Back Button](assets/images/readme-images/rules.png)
+![Rules Section](assets/images/readme-images/rules.png)
+
+[Back to top](<#contents>)
 
 ### Quiz
 
+The quiz section is the main section of The Movie Soundtrack Quiz. This section is displayed once the start button is clicked by the user. The quiz contents is all held within a container which is hidden until the start button is clicked. Multiple elements within the quiz container are manipulated and updated using javascript. 
+
+![Quiz Section](assets/images/readme-images/quiz.png)
+
+[Back to top](<#contents>)
+
+* ### Countdown Timer
+
+The countdown timer is a simple text element that appears in the top left corner of the quiz container. The timer value is updated every second using a javascript interval and a countdown function. There is an if statement within the countdown function to check if the timer hits 0, if it does the interval timer is cleared and the timer stops. This also triggers the answer buttons to show the correct answer and for the next button to appear. The user cannot choose an answer if the timer runs out as the event listeners for the answer buttons are removed. 
+
+![Countdown Timer](assets/images/readme-images/countdown-timer.png)
+
+[Back to top](<#contents>)
+
+* ### Progress Bar
+
+The progress bar is displayed at the top center of the quiz container and is seperated into two elements. The first element is a text element which displays the current question number to the user in a text based way. This number increases as the user continues through the quiz. The second element is a progress bar which is updated to display a users progress in the quiz in a more visual way. Each time a user clicks the next button to go to the next question the width of the inner progress meter increases within the progress bar. As there are twelve questions the percentage width increase is 8.33% per question. The width is adjusted using javascript. The colour of the progress bar meter is purple to make the element more eye catching to the user.
+
+![Progress Bar](assets/images/readme-images/progress-bar.png)
+
+[Back to top](<#contents>)
+
+* ### Score Counter
+
+The score counter is displayed at the top right hand corner of the quiz container. It is a text based score which is incremented by one and saved to a javascript variable each time a user makes a correct choice. This variable is then displayed in the score element. The font used for the score is larger and bolder than the other text to make it more visible to the user.
+
+![Score Counter](assets/images/readme-images/score-counter.png)
+
+[Back to top](<#contents>)
+
+* ### Question
+
+The question element is a simple text element which is displayed in a larger and bolder font and centralised in the container. Currently the question for this quiz is the same for each question. The question element is saved within an object within the javascript question array. Each object has question, audio, answer and correct properties with values which are then added to the current question the user is viewing. Although all the questions are currently the same, the question is still being added from the javascript property question from each question object. If the timer runs out and the timeout javascript function is called the text inside this element is changed to "Sorry you have run out of time!" to clearly indicate to the user that they have run out of time.
+
+![Question Element](assets/images/readme-images/question.png)
+
+[Back to top](<#contents>)
+
+* ### Audio
+
+The audio element is hidden from the page. Audio is set to autoplay when a user is on a page but it can be paused and played using the pause and play icons. Each question object has an audio property which has the value of the file name for the correct audio for that question. Every time a new question is required the audio for that question is selected and played using the file reference from the question object.
+
+[Back to top](<#contents>)
+
+* ### Play and Pause Icons
+
+The pause and play icons are displayed above the answer buttons. They are centralised to the middle of the container and feature black and white colour styling with a thick border. Only one icon displays at a time. A javascript function checks if the audio is playing and displays either the play or pause icon depending on what the audio is doing. This cuts down on clutter and allows a more user friendly experience. The icons feature a hover effect which scales the icons by 1.05 and adds a black border shadow.
+
+![Play Icon](assets/images/readme-images/play.png)
+
+![Pause Icon](assets/images/readme-images/pause.png)
+
+[Back to top](<#contents>)
+
+* ### Answer Buttons
+
+
+
+![Answer Buttons](assets/images/readme-images/answer-buttons.png)
+
+![Correct and Incorrect](assets/images/readme-images/answer-buttons-2.png)
+
+![Hover Effect](assets/images/readme-images/answer-buttons-3.png)
+
+[Back to top](<#contents>)
+
+* ### Navigational Buttons
+
+![Navigation Buttons](assets/images/readme-images/quiz.png)
+
+[Back to top](<#contents>)
+
 ### End
+
+![End Section](assets/images/readme-images/end.png)
+
+[Back to top](<#contents>)
+
+* ### Final Score Display
+
+![Final Score](assets/images/readme-images/final-score.png)
+
+[Back to top](<#contents>)
+
+* ### Quote
+
+![Quote](assets/images/readme-images/quote.png)
+
+[Back to top](<#contents>)
+
+* ### Home Button
+
+![Home Button](assets/images/readme-images/home-button.png)
+
+[Back to top](<#contents>)
 
 ## Future Features
 
