@@ -335,7 +335,9 @@ The Movie Soundtrack Quiz has many potential features that could be added or imp
 
 [Back to top](<#contents>)
 
-# Testing 
+# Testing
+
+The Movie Soundtrack Quiz has been rigorously tested throughout its development process.
 
 ## Validator Tests
 

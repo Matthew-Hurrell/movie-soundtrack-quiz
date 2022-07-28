@@ -35,6 +35,7 @@ const homeButton = document.getElementById('home-button');
 const startButton = document.querySelector('#start-button');
 const rulesButton = document.getElementById('rules-button');
 const backButton = document.getElementById('back-button');
+const secondHomeButton = document.getElementById('second-home-button');
 
 // Home Page 
 const unmuteElement = document.querySelector('.unmute-div');
@@ -70,6 +71,9 @@ nextButton.addEventListener('click', nextQuestion);
 endButton.addEventListener('click', end);
 rulesButton.addEventListener('click', rules);
 startButton.addEventListener('click', startGame);
+backButton.addEventListener('click', goHome);
+homeButton.addEventListener('click', goHome);
+secondHomeButton.addEventListener('click', goHome);
 
 // Score  
 score.innerText = quizScore;
@@ -92,6 +96,12 @@ function rules() {
 	<li>When the next button appears, click it to continue to the next question</li>
  	<li>When the end button appears, click it to end the quiz</li>
     </ul>`;
+}
+
+// Function to open the home page. Called when the back or home buttons are clicked
+
+function goHome() {
+    window.open("index.html", "_self");
 }
 
 /* Questions */
