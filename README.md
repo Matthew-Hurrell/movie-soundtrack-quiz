@@ -178,7 +178,7 @@ The second text element is a brief sentence which further conveys the intention 
 
 * ### Buttons
 
-There are two buttons displayed on the main landing page of the site - start and rules. Navigation is kept simple to avoid confusion. The start button is coloured green with a linear gradient with white text. The rules button is coloured blue with the same linear gradient and white text. The hover effect scales up the buttons by 1.05 and adds a shadow with matching colour behind the buttons. Borders for the buttons are 1 pixel, solid and black. When interacted with, the start button starts the quiz by triggering the start javascript function. It also hides the first container and displays the second container with the quiz elements. The rules button hides the buttons and the bold text element and adds an unordered list of the rules into the other text element using javascript. It also displays a back button with the same styling as the rules button which returns the user back to the main loading page.
+There are two buttons displayed on the main landing page of the site - start and rules. Navigation is kept simple to avoid confusion. The start button is coloured green with a linear gradient with white text. The rules button is coloured blue with the same linear gradient and white text. The hover effect scales up the buttons by 1.05 and adds a shadow with matching colour behind the buttons. Borders for the buttons are 1 pixel, solid and black. When interacted with, the start button starts the quiz by triggering the start javascript function. It also hides the first container and displays the second container with the quiz elements. The start button also triggers the questions array to be shuffled and for the first object in the array to be selected as the first question. The rules button hides the buttons and the bold text element and adds an unordered list of the rules into the other text element using javascript. It also displays a back button with the same styling as the rules button which returns the user back to the main loading page.
 
 ![Buttons](assets/images/readme-images/buttons.png)
 
@@ -256,7 +256,7 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * ### Answer Buttons
 
-
+The answer buttons are the interactive elements that the user can use to answer the current question. There are four buttons, each with one answer option which contains text from the selected question object in the questions array. Each question object has four answer properties and a correct property. Each of these answer property values are displayed within a corresponding answer button. When a user clicks a button to make a choice, a javascript function called checkAnswer checks the text content of the answer button against the value of the question object correct. The question object property correct has the same value as the correct answer within the answer buttons. If the button selected by the user is correct, a CSS class of correct is added to the button to make the background colour change to green to symbolise the correct answer. If the answer is incorrect a CSS class of incorrect is added to the button to change the colour to red. For the incorrect answer, the buttons are then iterated through to check for the correct answer and this button then has the class of correct added to it. The buttons have a hover effect of a light blue background and also a scale of 1.05. Event listeners are removed from all the answer buttons when a choice is made or if the timer runs out so a user cannot make a further choice. They are then re-added for the next question when the user clicks the next button.
 
 ![Answer Buttons](assets/images/readme-images/answer-buttons.png)
 
@@ -268,11 +268,17 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * ### Navigational Buttons
 
-![Navigation Buttons](assets/images/readme-images/quiz.png)
+The quiz section features three navigational buttons. These buttons are home, next and end. The home button is always visible and provides the user with a way of exiting the quiz at any time to go back to the home page. The next button is hidden but becomes visible when a user makes a choice for a question or runs out of time. The next button is used to move the user to the next question in the questions array. When the next button is clicked a new question is displayed on the elements of the quiz section, the timer is reset, the new audio is played and the answer button classes are also reset. The score is also recorded and displayed. The previous question is also removed from the question array. Each time a question is answered by a user an if statement is run within the correct and incorrect functions to check if the array length has reached a certain length. There are currently 27 questions in the question array and the quiz length is 12 questions long. The if statement checks if the array length is equal to 16 and if it is it knows its the last question. At this time instead of displaying the next button, the end button is displayed in its place. When this button is clicked the user is sent to the end section and the quiz container and all its elements are hidden from display. All buttons are consistent in styling with previous buttons. Green and blue colours are used and hover and border effects are the same. Blue coloured buttons are used for home buttons and green buttons are used to progress the user to the next relevant section. 
+
+![Navigation Buttons](assets/images/readme-images/nav-buttons.png)
+
+![End Button](assets/images/readme-images/end-button.png)
 
 [Back to top](<#contents>)
 
 ### End
+
+The end section is the last section of The Movie Soundtrack Quiz site. It is the section navigated to after the user clicks the end button on the quiz. Styling is consistent with the other sections of the quiz. Content is kept clear and basic to avoid clutter and confusion.
 
 ![End Section](assets/images/readme-images/end.png)
 
@@ -280,11 +286,15 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * ### Final Score Display
 
+The final score for the users quiz is saved to a javascript variable and added into the final score display text element in the end section. The font is large and bold and positioned at the top of the section. The user is congratulated for completing the quiz.
+
 ![Final Score](assets/images/readme-images/final-score.png)
 
 [Back to top](<#contents>)
 
 * ### Quote
+
+When the user clicks the end button to complete the quiz the final score is used to iterate through a movie quotes array. There are thirteen quotes in the array, each one corresponds to a different user score. The quote object is then selected by the users score and displayed in the end section quote element. This is a quote generator based on the users score. Each time a user completes the quiz they will get a different quote if they scored differently. This adds an element of replayability for the user. The quote text has a font style of italics and is slightly larger and bolder. The quote also has a caption which is displayed just below it. The caption is also autofilled from the quotes array object.
 
 ![Quote](assets/images/readme-images/quote.png)
 
@@ -292,11 +302,21 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * ### Home Button
 
+The last element in the end section is a home button which allows the user to navigate back to the landing page. The user can then retake the quiz if they wish. The styling is consistent with the other home page buttons with similar hover effects.
+
 ![Home Button](assets/images/readme-images/home-button.png)
 
 [Back to top](<#contents>)
 
 ## Future Features
+
+The Movie Soundtrack Quiz has many potential features that could be added or improved. Here is a list of possible features to be added in the future.
+
+* A playlist feature could be added at the end of the quiz to navigate the user to the track playlist of audio that was featured during their quiz. This playlist could feature the track name and composer/artist name so the user could listen to the tracks seperately on a different platform is they enjoyed the songs.
+* Movie poster images could be added to the answer buttons instead of text. This could be visually more appealing than just text.
+* Easy, medium and difficult modes could be added to the quiz for the user to select a difficulty setting for the quiz questions.
+* A high score section could be added where a user enters a username and thier score is saved on a list of high scores.
+* More questions could be added with a better variety of question topics to increase playability.
 
 [Back to top](<#contents>)
 
@@ -304,11 +324,12 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) - Provides the structure of the site information, elements and website content. 
 * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Provides the styling of the HTML content.
-* [Balsamiq](https://balsamiq.com/) - Wireframing software used to plan and design website templates.
-* [GitPod](https://gitpod.io/) - An open source developer platform for remote development. Used to edit and build the website.
+* [JavaScript](https://www.javascript.com/) - Provides the site interactivity and function.
+* [Balsamiq](https://balsamiq.com/) - Wireframing software used to plan and design the site templates.
+* [GitPod](https://gitpod.io/) - An open source developer platform for remote development. Used to edit and build the site
 * [GitHub](https://github.com/) - An online host for web and software development projects. Used to store the repository and deploy the finished website.
 * [Git](https://git-scm.com/) - Software for tracking changes to files. Used with GitPod to add, commit and push code changes to the repository on GitHub. 
-* [Affinity Photo](https://affinity.serif.com/en-gb/photo/) - A photo editing app available through the Apple store used to design and create graphics for the site.
+* [Affinity Photo](https://affinity.serif.com/en-gb/photo/) - A photo editing app available through the Apple store used to design and edit images for the site.
 * [Apple Notes](https://www.icloud.com/notes) - A simple Apple app used to write and plan copy and content for the website.
 * [Slack](https://www.icloud.com/notes) - An online messaging program designed for workplace collaboration. Used for advice and guidance from peers and tutors. 
 
@@ -318,7 +339,7 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 ## Validator Tests
 
-[The W3C HTML Markup Validation Service](https://validator.w3.org/) [The W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/) 
+[The W3C HTML Markup Validation Service](https://validator.w3.org/) [The W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/) [JSHint Javascript Validation Service](https://jshint.com/)
 
 [Back to top](<#contents>)
 
