@@ -57,6 +57,7 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
 * [**Credits**](<#credits>)
     * [**Content**](<#content>)
     * [**Media**](<#media>)
+    * [**Code**](<#code>)
 *  [**Acknowledgements**](<#acknowledgements>)
 
 # User Experience UX
@@ -70,7 +71,7 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
 * As a user I want the audio for each question to autoplay, but also have control over pausing and playing the audio.
 * As a user I want each question to have a time limit which is fair but also challenging.
 * As a user I want the audio to continue playing when I make my choice, or if the timer runs out, so I can continue to listen to the track until continuing to the next question.
-* As a user I want to be lead through the quiz with intuitive and easy to understand navigation.
+* As a user I want to be guided through the quiz with intuitive and easy to understand navigation.
 * As a user I want the quiz to look eye catching and professional.
 * As a user I want a progress bar and question countdown which gives me a visual reminder of where I am in the quiz.
 * As a user I want a score counter which automatically counts and displays my score during and at the end of the quiz.
@@ -79,7 +80,7 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
 * As a user I want to be able to replay the quiz multiple times and be presented with different questions. 
 * As a user I want the audio to be clear and of good sound quality.
 * As a user I want the quiz content to be diverse.
-* As a user I want to be congratulated on completing the quiz and presented with my answer.
+* As a user I want to be congratulated on completing the quiz and presented with my final quiz score.
 * As a user I want to be able to easily navigate to the beginning of the quiz once I have finished. 
 
 [Back to top](<#contents>)
@@ -113,11 +114,13 @@ The font used for the majority of The Movie Soundtrack Quiz is Lato from [Google
 
 The title font is an image generated from [1001 Fonts](https://www.1001fonts.com/movie-fonts.html?page=1). This was used to create a bolder and more thematic title which is more eye catching than a standard font. 
 
+[Back to top](<#contents>)
+
 * ### Colour Scheme 
 
 The colour scheme used for The Movie Soundtrack Quiz is a combination of whites and blacks for text elements with blues and greens for buttons. The colours used for the quiz are intended to convey meaning and provide a visual aid to the user. Red is used on incorrect answers and green on correct answers to display that outcome to the user in an easy to understand way. 
 
-The container elements are a slightly transparent white which enables the background to be just visible behind. Navigational button elements are blue or green with a linear gradient into a darker shade at the bottom. They also feature white text to provide better contrast. Answer buttons are simply white with black text so they are easy to read. But when hovered over the button background changes to a faint blue. There are also classes for correct and incorrect that change the background colour of the answer buttons depending on the user choice. An incorrect answer changes the background colour to a linear gradient of red and a correct answer changes the background to a linear gradient of green. The container upper and lower border features multi-coloured film strips which adds some bright colour into the page. The progress bar features a purple strip which adds a new colour into the page palette and draws the users attention. The background image is a multi-coloured collage of movie posters which is very eye catching. A white linear gradient was added to the image to dull the colours slightly and to make it less distracting for the user. 
+The container elements are a slightly transparent white which enables the background to be just visible behind. Navigational button elements are blue or green with a linear gradient into a darker shade at the bottom. They also feature white text to provide better contrast. Answer buttons are simply white with black text so they are easy to read. But when hovered over the button background changes to a faint blue. There are also CSS classes for correct and incorrect that change the background colour of the answer buttons depending on the user choice. An incorrect answer changes the background colour to a linear gradient of red and a correct answer changes the background to a linear gradient of green. The container upper and lower border features multi-coloured film reel strips which adds some bright colour into the page. The progress bar features a purple strip which adds a new colour into the page palette and draws the users attention. The background image is a multi-coloured collage of movie posters which is very eye catching. A white linear gradient was added to the image to dull the colours slightly and to make it less distracting for the user. 
 
 ![The Movie Soundtrack Quiz Colour Palette](assets/images/readme-images/colour-palette.png)
 
@@ -131,7 +134,7 @@ The Movie Soundtrack Quiz contains many features that were designed to enhance t
 
 ### Home Page
 
-The home page is the main landing page of The Movie Soundtrack Quiz. It is displayed first to the user when they open or refresh the page. The objective of this section is to provide the user with a clear purpose to the intentions of the page in an appealing and eye catching way. Content is simple but colourful to encourage further interaction from the user.
+The home page is the main landing page of The Movie Soundtrack Quiz. It is displayed first to the user when they open or refresh the page. The objective of this section is to provide the user with a clear purpose of the page in an appealing and eye catching way. Content is simple but colourful to encourage further interaction from the user.
 
 ![The Movie Soundtrack Quiz Home Page](assets/images/readme-images/home-page.png)
 
@@ -139,13 +142,13 @@ The home page is the main landing page of The Movie Soundtrack Quiz. It is displ
 
 * ### Background
 
-The background is used throughout all sections of the site to provide consistency. The background is an image of a large collage of movie posters which was chosen to help to convey the theme of the quiz to the user. The original image was too bright for a background image so a white linear gradient was added to fade the colours slightly to make them less distracting to the user.
+The background is used throughout all sections of the site to provide consistency. The background is an image of a large collage of movie posters. It was chosen to help to convey the theme of the quiz to the user in a visual way. The original image was too bright for a background image so a white linear gradient was added to fade the colours slightly to make them less distracting to the user.
 
 [Back to top](<#contents>)
 
 * ### Border
 
-Another element reused throughout the site is the border top and bottom. These borders are images of multi-coloured film tape. They were chosen to further convey the theme of the site to the user in a visual way. The borders are colourful and help to draw the users eyes into the middle of the screen. The borders were just added to the top and bottom of the main section so as not to be too distracting. The design is simple yet visually appealing.
+Another element reused throughout the site is the border top and bottom. These borders are images of multi-coloured film reel tapes. They were chosen to further convey the theme of the site to the user. The borders are colourful and help to draw the users eyes into the middle of the screen. The design is simple yet visually appealing.
 
 ![Border](assets/images/readme-images/border.png)
 
@@ -153,7 +156,7 @@ Another element reused throughout the site is the border top and bottom. These b
 
 * ### Container
 
-All the interactive elements of the site are positioned within the central container. This container is centralised into the middle of the screen on larger screens and is responsive on smaller screen sizes. The container has a white background which is slightly transparent to allow a small amount of the background to be seen. The container features a solid black border with a faint border around the edge and borders. A simple white background was used to provide suitable readability and contrast to the text elements. 
+All the interactive elements of the site are positioned within the central container. This container is centralised into the middle of the screen on larger screens and is responsive on smaller screen sizes. The container has a white background which is slightly transparent to allow a small amount of the background to be seen. The container features a solid black border with a faint border shadow around the edge and borders. A simple white background was used to provide suitable readability and contrast to the text elements. 
 
 ![Container](assets/images/readme-images/container.png)
 
@@ -161,7 +164,7 @@ All the interactive elements of the site are positioned within the central conta
 
 * ### Title
 
-The main title is displayed on the landing page and is hidden in the following sections. The font is a form of word-art with a movie theme. The font is bold, capitalised and eye catching. The title is an image which is centralised in the container using flex box. The image scales down on smaller screen sizes.
+The main title is displayed on the landing page but is hidden in the following sections. The font is a form of word-art with a movie theme. The font is bold, capitalised and eye catching. The title is an image which is centralised in the container using flex box. The image max width is set to 80% of the container width and scales down on smaller screen sizes.
 
 ![Title](assets/images/readme-images/title.png)
 
@@ -178,7 +181,7 @@ The second text element is a brief sentence which further conveys the intention 
 
 * ### Buttons
 
-There are two buttons displayed on the main landing page of the site - start and rules. Navigation is kept simple to avoid confusion. The start button is coloured green with a linear gradient with white text. The rules button is coloured blue with the same linear gradient and white text. The hover effect scales up the buttons by 1.05 and adds a shadow with matching colour behind the buttons. Borders for the buttons are 1 pixel, solid and black. When interacted with, the start button starts the quiz by triggering the start javascript function. It also hides the first container and displays the second container with the quiz elements. The start button also triggers the questions array to be shuffled and for the first object in the array to be selected as the first question. The rules button hides the buttons and the bold text element and adds an unordered list of the rules into the other text element using javascript. It also displays a back button with the same styling as the rules button which returns the user back to the main loading page.
+There are two buttons displayed on the main landing page of the site - start and rules. Navigation is kept simple to avoid confusion. The start button is coloured green with a linear gradient and white text. The rules button is coloured blue with the same linear gradient and white text. The hover effect scales up the buttons by 1.05 and adds a shadow with matching colour behind the buttons. Borders for the buttons are 1 pixel, solid and black. When interacted with, the start button starts the quiz by triggering the start javascript function. It also hides the first container and displays the second container with the quiz elements. The start button also triggers the questions array to be shuffled and for the first object in the array to be selected as the first question. The rules button hides the buttons and the bold text element and adds an unordered list of the rules into the other text element using javascript. It also displays a back button with the same styling as the rules button which returns the user back to the main loading page when clicked.
 
 ![Buttons](assets/images/readme-images/buttons.png)
 
@@ -192,7 +195,7 @@ There are two buttons displayed on the main landing page of the site - start and
 
 * ### Rules 
 
-The rules text element is added using javascript when the rules button is clicked on the main landing page. It is a simple unordered list of clear rules which helps the user understand the nature of the quiz before starting. Helpful information about what to expect during the quiz is displayed here as well as a back button to navigate back to the main landing page when the user is ready to start.
+The rules text element is added using javascript when the rules button is clicked on the main landing page. It is a simple unordered list of clear rules which helps the user understand the nature of the quiz before starting. Helpful information about what to expect during the quiz is displayed here as well as a back button to navigate back to the main landing page when the user is ready to start the quiz.
 
 ![Rules Section](assets/images/readme-images/rules.png)
 
@@ -232,7 +235,7 @@ The score counter is displayed at the top right hand corner of the quiz containe
 
 * ### Question
 
-The question element is a simple text element which is displayed in a larger and bolder font and centralised in the container. Currently the question for this quiz is the same for each question. The question element is saved within an object within the javascript question array. Each object has question, audio, answer and correct properties with values which are then added to the current question the user is viewing. Although all the questions are currently the same, the question is still being added from the javascript property question from each question object. If the timer runs out and the timeout javascript function is called the text inside this element is changed to "Sorry you have run out of time!" to clearly indicate to the user that they have run out of time.
+The question element is a simple text element which is displayed in a larger and bolder font and centralised in the container. The question element is saved within an object within the javascript question array. Each object has question, audio, answer and correct properties with values which are then added to the current question the user is viewing. Although all the questions are currently the same, the question is still being added from the javascript property question from each question object. If the timer runs out and the timeout javascript function is called the text inside this element is changed to "Sorry you have run out of time!" to clearly indicate to the user that they have run out of time.
 
 ![Question Element](assets/images/readme-images/question.png)
 
@@ -240,13 +243,13 @@ The question element is a simple text element which is displayed in a larger and
 
 * ### Audio
 
-The audio element is hidden from the page. Audio is set to autoplay when a user is on a page but it can be paused and played using the pause and play icons. Each question object has an audio property which has the value of the file name for the correct audio for that question. Every time a new question is required the audio for that question is selected and played using the file reference from the question object.
+The audio element is hidden from the page. Audio is set to autoplay when a user is on a the quiz section of the site but it can be controlled using the pause and play icons. Each question object has an audio property which has the value of the file name for the correct audio for that question. Every time a new question is required the audio for that question is selected and played using the file reference from the question object.
 
 [Back to top](<#contents>)
 
 * ### Play and Pause Icons
 
-The pause and play icons are displayed above the answer buttons. They are centralised to the middle of the container and feature black and white colour styling with a thick border. Only one icon displays at a time. A javascript function checks if the audio is playing and displays either the play or pause icon depending on what the audio is doing. This cuts down on clutter and allows a more user friendly experience. The icons feature a hover effect which scales the icons by 1.05 and adds a black border shadow.
+The pause and play icons are displayed above the answer buttons. They are centralised to the middle of the container and feature black and white colour styling with a thick circular border. Only one icon displays at a time. A javascript function called audioControls checks if the audio is playing and displays either the play or pause icon depending on what the audio is doing. This cuts down on clutter and allows for a more user friendly experience. The icons feature a hover effect which scales the icons by 1.05 and adds a black border shadow.
 
 ![Play Icon](assets/images/readme-images/play.png)
 
@@ -256,7 +259,7 @@ The pause and play icons are displayed above the answer buttons. They are centra
 
 * ### Answer Buttons
 
-The answer buttons are the interactive elements that the user can use to answer the current question. There are four buttons, each with one answer option which contains text from the selected question object in the questions array. Each question object has four answer properties and a correct property. Each of these answer property values are displayed within a corresponding answer button. When a user clicks a button to make a choice, a javascript function called checkAnswer checks the text content of the answer button against the value of the question object correct. The question object property correct has the same value as the correct answer within the answer buttons. If the button selected by the user is correct, a CSS class of correct is added to the button to make the background colour change to green to symbolise the correct answer. If the answer is incorrect a CSS class of incorrect is added to the button to change the colour to red. For the incorrect answer, the buttons are then iterated through to check for the correct answer and this button then has the class of correct added to it. The buttons have a hover effect of a light blue background and also a scale of 1.05. Event listeners are removed from all the answer buttons when a choice is made or if the timer runs out so a user cannot make a further choice. They are then re-added for the next question when the user clicks the next button.
+The answer buttons are the interactive elements that the user can use to answer the current question. There are four buttons, each with one answer option which contains text from the selected question object in the questions array. Each question object has four answer properties and a correct property. Each of these answer property values are displayed within a corresponding answer button. When a user clicks a button to make a choice, a javascript function called checkAnswer checks the text content of the answer button against the value of the question object property correct. This property has the same value as the correct answer within the answer buttons. If the button selected by the user is correct, a CSS class of correct is added to the button to make the background colour change to green to symbolise the correct answer. If the answer is incorrect a CSS class of incorrect is added to the button to change the colour to red. For the incorrect answer, the buttons are then iterated through to check for the correct answer and this button then has the class of correct added to it. The buttons have a hover effect of a light blue background and also a scale of 1.05. Event listeners are removed from all the answer buttons when a choice is made or if the timer runs out so a user cannot make a further choice. They are then re-added for the next question when the user clicks the next button.
 
 ![Answer Buttons](assets/images/readme-images/answer-buttons.png)
 
@@ -268,7 +271,7 @@ The answer buttons are the interactive elements that the user can use to answer 
 
 * ### Navigational Buttons
 
-The quiz section features three navigational buttons. These buttons are home, next and end. The home button is always visible and provides the user with a way of exiting the quiz at any time to go back to the home page. The next button is hidden but becomes visible when a user makes a choice for a question or runs out of time. The next button is used to move the user to the next question in the questions array. When the next button is clicked a new question is displayed on the elements of the quiz section, the timer is reset, the new audio is played and the answer button classes are also reset. The score is also recorded and displayed. The previous question is also removed from the question array. Each time a question is answered by a user an if statement is run within the correct and incorrect functions to check if the array length has reached a certain length. There are currently 27 questions in the question array and the quiz length is 12 questions long. The if statement checks if the array length is equal to 16 and if it is it knows its the last question. At this time instead of displaying the next button, the end button is displayed in its place. When this button is clicked the user is sent to the end section and the quiz container and all its elements are hidden from display. All buttons are consistent in styling with previous buttons. Green and blue colours are used and hover and border effects are the same. Blue coloured buttons are used for home buttons and green buttons are used to progress the user to the next relevant section. 
+The quiz section features three navigational buttons. These buttons are home, next and end. The home button is always visible and provides the user with a way of exiting the quiz at any time to go back to the home page. The next button is hidden but becomes visible when a user makes a choice for a question or runs out of time. The next button is used to move the user to the next question in the questions array. When the next button is clicked a new question is displayed on the elements of the quiz section, the timer is reset, the new audio is played and the answer button classes are also reset. The score is also recorded and displayed. The previous question is also removed from the question array. Each time a question is answered by a user an if statement is run within the correct and incorrect functions to check if the array length has reached a certain length. There are currently 27 questions in the question array and the quiz length is 12 questions long. The if statement checks if the array length is equal to 16 and if it is it knows the user has reached the last question. At this time the end button is displayed instead of the next button. When the end button is clicked the user is sent to the end section and the quiz container and all its elements are hidden from display. All buttons are consistent in styling with previous buttons. Green and blue colours are used and hover and border effects are the same. Blue coloured buttons are used for home buttons and green buttons are used to progress the user to the next relevant section. 
 
 ![Navigation Buttons](assets/images/readme-images/nav-buttons.png)
 
@@ -294,7 +297,7 @@ The final score for the users quiz is saved to a javascript variable and added i
 
 * ### Quote
 
-When the user clicks the end button to complete the quiz the final score is used to iterate through a movie quotes array. There are thirteen quotes in the array, each one corresponds to a different user score. The quote object is then selected by the users score and displayed in the end section quote element. This is a quote generator based on the users score. Each time a user completes the quiz they will get a different quote if they scored differently. This adds an element of replayability for the user. The quote text has a font style of italics and is slightly larger and bolder. The quote also has a caption which is displayed just below it. The caption is also autofilled from the quotes array object.
+When the user clicks the end button to complete the quiz the final score is used to iterate through a movie quotes array. There are thirteen quotes in the array, each one corresponds to a different user score. The quote object is then selected by the users score and is displayed in the end section quote element using JavaScript. This quote generator is based on the users score. Each time a user completes the quiz they will get a different quote if they scored differently. This adds an element of replayability for the user. The quote text has a font style of italics and is slightly larger and bolder. The quote also has a caption which is displayed just below it. The caption is also autofilled from the quotes array object.
 
 ![Quote](assets/images/readme-images/quote.png)
 
@@ -312,11 +315,11 @@ The last element in the end section is a home button which allows the user to na
 
 The Movie Soundtrack Quiz has many potential features that could be added or improved. Here is a list of possible features to be added in the future.
 
-* A playlist feature could be added at the end of the quiz to navigate the user to the track playlist of audio that was featured during their quiz. This playlist could feature the track name and composer/artist name so the user could listen to the tracks seperately on a different platform is they enjoyed the songs.
+* A playlist feature could be added at the end of the quiz to navigate the user to a playlist of the audio that was featured during their quiz. This playlist could display the track name and composer/artist name to the user so they could listen to the tracks seperately on a different platform.
 * Movie poster images could be added to the answer buttons instead of text. This could be visually more appealing than just text.
-* Easy, medium and difficult modes could be added to the quiz for the user to select a difficulty setting for the quiz questions.
-* A high score section could be added where a user enters a username and thier score is saved on a list of high scores.
-* More questions could be added with a better variety of question topics to increase playability.
+* Easy, medium and difficult modes could be added to the quiz for the user to select a difficulty setting for their quiz questions.
+* A high score section could be added where a user enters a username and thier score is saved to a list of high scores.
+* More questions could be added with a better variety of question topics to increase replayability.
 
 [Back to top](<#contents>)
 
@@ -332,12 +335,13 @@ The Movie Soundtrack Quiz has many potential features that could be added or imp
 * [Affinity Photo](https://affinity.serif.com/en-gb/photo/) - A photo editing app available through the Apple store used to design and edit images for the site.
 * [Apple Notes](https://www.icloud.com/notes) - A simple Apple app used to write and plan copy and content for the website.
 * [Slack](https://www.icloud.com/notes) - An online messaging program designed for workplace collaboration. Used for advice and guidance from peers and tutors. 
+* [TuneFab Spotify Music Converter](https://www.tunefab.com/sp-music-converter/) - Software used to download audio tracks from Spotify.
 
 [Back to top](<#contents>)
 
 # Testing
 
-The Movie Soundtrack Quiz has been rigorously tested throughout its development process.
+The Movie Soundtrack Quiz has been rigorously tested for bugs, errors and styling/layout issues throughout its development process. 
 
 ## Validator Tests
 
@@ -357,29 +361,40 @@ The JavaScript document script.js was tested using [JSHint Javascript Validation
 
 ## Responsiveness Tests
 
-The Movie Soundtrack Quiz has been tested for responsiveness on multiple devices and through [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/), [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive Design Checker](https://responsivedesignchecker.com/). No errors in layout were found. 
+The Movie Soundtrack Quiz has been tested for responsiveness on multiple physical devices and through [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/), [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive Design Checker](https://responsivedesignchecker.com/). No errors in layout were found on any devices.
 
 ![The Movie Soundtrack Quiz Responsive Design](assets/images/readme-images/responsive.png)
-
-
 
 [Back to top](<#contents>)
 
 ## Lighthouse Tests
 
-[Chrome Dev Tools - Lighthouse](https://developers.google.com/web/tools/lighthouse).
+The Movie Soundtrack Quiz was tested with [Chrome Dev Tools - Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance, accessibility, best practices and SEO. The site passed all the tested criteria with 100 out of 100. 
+
+![Lighthouse Test](assets/images/readme-images/lighthouse.png)
 
 [Back to top](<#contents>)
 
 ## Browser Tests
 
+The Movie Soundtrack Quiz was tested on a multitude of different browsers to check for any compatibility issues. Browser tests were conducted on Google Chrome, Safari and Firefox with no visible issues with styling or functionality. Responsiveness was also consistent across all browsers.
+
 [Back to top](<#contents>)
 
 ## Bugs
 
+The Movie Soundtrack Quiz was built using vanilla HTML, CSS and JavaScript. During development a number of unforeseen challenges presented themselves, and this consequently changed the features that were included in the final project. A lack of knowledge in back end languages limited the functionality of the site.
+
 * ### Resolved 
 
+* One of the biggest challenges with this project was finding reliable way to autoplay the audio for the user. Due to recent changes in regulations, audio and video is blocked from autoplaying until a user interacts with the site. During the early development process, the project was split into three seperate HTML pages including index.html for the home page, quiz.html for the quiz section and end.html for the end section. For a user starting at the home page and progressing through the quiz as intended this was not a problem, but if a user refreshed the quiz.html page the quiz would restart but audio would not autoplay as the user technically hadn't interacted with the page yet. After trying a few solutions it was decided the best way to resolve the issue was to combine all the HTML files into one document. This way if the user refreshed the page they would be sent back to the home page section and would have to click the start button before starting the quiz. This would then count as an interaction and the audio would autoplay as it should. This solution worked but it presented new issues that needed to be resolved.
+* After the HTML documents were condensed into one HTML page the countdown timer was starting on the home page before the quiz was technically started by the user. This meant that for the first question the user had less than 60 seconds depending on how much time they spent on the home page. To resolve this issue the set interval for the javascript countdown timer had to be moved into the start game function so it was only called when the user clicked the start button.
+* Another bug that presented itself during development was an issue with the audio control icons. Originally it was planned to have icons for play, pause, volume up and volume down always on display for a user to click to control the audio. But this was later revised as it cluttered the screen for the user unnecessarily. It was therefore concluded that it was best to just have one icon, either pause or play, on display at a time. To make this work there needed to be a function with an if statement to check if the audio was playing and to display the correct icon at that time. This ended up being more complicated than expected and created a number of bugs. One of these issues was if the music was paused during a question and the next button was clicked while the music was paused the icon wouldn't change to a pause button when the audio played for the next question. To rectify this problem the function was changed to be called every time a user clicks the next button. The function also needed to be called every time a user interacts with the audio icons. This solution solved the bug with the audio icons.
+* There was also a minor issue with button links in the HTML document. The HTML validator passed errors for buttons being children of A links and vice versa. This was simply resolved by removing the A links from the buttons and creating a javascript function which sends the user to the desired location via window.open. After this was amended the HTML document passed the validator without any errors.
+
 * ### Unresolved
+
+* One unfortunate bug that still remains to be resolved is if a user clicks the pause button quickly after starting a new question the audio function to autoplay is interupted with the audio function pause and this causes the audio to show an error. This then stops the audio from playing. This isn't an error that should cause too many problems as it only happens if the pause button is clicked within a very quick tiem frame after the question is loaded. One possible way to resolve this would be to delay the functionality of the pause button for a couple of seconds until the audio is fully loaded so the user cannot interupt the audio at the start of each question. 
 
 [Back to top](<#contents>)
 
@@ -387,7 +402,7 @@ The Movie Soundtrack Quiz has been tested for responsiveness on multiple devices
 
 ## Project Deployment via GitHub
 
-The Disney Food Guide repository is stored on GitHub. The site was created using GitPod and the live site is hosted on GitHub Pages. This is a guide to deploy a site on GitHub Pages using GitHub. 
+The Movie Soundtrack Quiz repository is stored on GitHub. The site was created using GitPod and the live site is hosted on GitHub Pages. This is a guide to deploy a site on GitHub Pages using GitHub. 
 
 1. Sign in to GitHub and find the repository in the repositories menu. 
 2. Click to open the repository and click on the settings icon to open the settings menu for the repository.
@@ -395,13 +410,11 @@ The Disney Food Guide repository is stored on GitHub. The site was created using
 4. Under source, select branch:main, leave the folder on root and click save. 
 5. The page will then automatically refresh and provide a link to the published site when it has finished processing. 
 
-![Github Deployment](assets/readme-images/github-deployment.png)
+![Github Deployment](assets/images/readme-images/deployment.png)
 
 When the site is live, a link to the site can also be found by navigating back to the repository and clicking on the github-pages link under the Environments title menu on the far right side. 
 
-![Github Environment](assets/readme-images/github-deployment-enviroment.png)
-
-The live link for Disney Food Guide can be found here - [Disney Food Guide](https://matthew-hurrell.github.io/Disney-Food-Guide/)
+The live link for The Movie Soundtrack Quiz can be found here - [The Movie Soundtrack Quiz](https://matthew-hurrell.github.io/movie-soundtrack-quiz/)
 
 [Back to top](<#contents>)
 
@@ -412,7 +425,7 @@ A copy of a local GitHub repository can be made by forking the GitHub repository
 1. Sign in to GitHub, locate the repository and click to open the repository. 
 2. On the right hand side of the repository menu there is a button called fork. Click the button to make a copy of the repository into your GitHub account. 
 
-![Github Forking](assets/readme-images/github-forking.png)
+![Github Forking](assets/images/readme-images/forking.png)
 
 [Back to top](<#contents>)
 
@@ -428,24 +441,42 @@ This is a guide on how to clone a repository from GitHub.
 6. Type git clone into the command line and then paste the URL copied from GitHub.
 7. Press enter and the local repository clone will be created.
 
-![Github Cloning](assets/readme-images/github-clone.png)
+![Github Cloning](assets/images/readme-images/clone.png)
 
 [Back to top](<#contents>)
 
 # Credits
 
+This section will credit the sources of code, tutorials, content and media for The Movie Soundtrack Quiz.
+
 ## Content
 
 * Fonts were imported from [Google Fonts](https://fonts.google.com/).
 * Icons were imported from [Font Awesome](https://fontawesome.com/).
-* Content and information was collated from 
-* Colour palate 
+* Question content was gathered using [Google Search](https://www.google.com/).
+* Movie Quotes were obtained from the [American Film Institute](https://www.afi.com/afis-100-years-100-movie-quotes/).
 
 ## Media
+
+* Audio content was sourced from [Spotify](https://open.spotify.com/).
+* The movie collage background image was downloaded from [Reddit](https://i.redd.it/4fxxbm4opjd31.jpg).
+* The border film reel was downloaded from [Dreamstime](https://www.dreamstime.com/stock-illustration-rainbow-flag-film-strip-frame-straight-shape-ribbon-design-element-white-background-lgbt-gay-movie-cinema-sign-symbol-isolated-image77231661).
+
+## Code 
+
+* The code used for the array randomizer is the Fisher-Yates shuffle. It was sourced from [Stack Overflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array).
 
 [Back to top](<#contents>)
 
 # Acknowledgements
+
+The Movie Soundtrack Quiz was created as a second project submission for the [Code Insitute](https://codeinstitute.net/) Higher National Diploma of Full Stack Software Development. The project focusses on using vanilla JavaScript as well as HTML5 and CSS3. I really enjoyed my time working on this project and further developing my skills as a software developer. I learnt a lot about implimenting JavaScript functionality into a static web page to create an interactive user experience. 
+
+I would like to take this opportunity to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his help and encouragement throughout this project. I would also like to thank the Code Institute Slack community, specifically the class of May 2022 for their support and feedback. Thank you to the Code Institute student care team and the tutor assistance. 
+
+I'm very much looking forward to my third project and continuing my journey as a software developer. 
+
+Happy coding!
 
 Matthew Hobbs-Hurrell
 
