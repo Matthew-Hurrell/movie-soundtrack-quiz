@@ -38,6 +38,9 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
         * [Play and Pause Icons](<#play-and-pause-icons>)
         * [Answer Buttons](<#answer-buttons>)
         * [Navigational Buttons](<#navigational-buttons>)
+    * [**Alert**](<#alert>)
+        * [Alert Text](<#alert-text>)
+        * [Alert Buttons](<#alert-buttons>)
     * [**End**](<#end>)
         * [Final Score Display](<#final-score-display>)
         * [Quote](<#quote>)
@@ -276,6 +279,30 @@ The quiz section features three navigational buttons. These buttons are home, ne
 ![Navigation Buttons](assets/images/readme-images/nav-buttons.png)
 
 ![End Button](assets/images/readme-images/end-button.png)
+
+[Back to top](<#contents>)
+
+### Alert
+
+When a user clicks the home button during the quiz, the function goHomeAlert is called. The quiz container and its contents are hidden and the alert container is displayed. The countdown timer interval is cleared and the audio is paused. The purpose of the alert container is to inform the user that if they navigate away from the quiz they will lose their progress and score. The user is then given the option to return back to the quiz by clicking the back button, or to exit to the home page via the home button. If the home button was clicked accidentally by the user, this alert ensures the user won't lose their progress in the quiz.
+
+![Alert Section](assets/images/readme-images/alert-section.png)
+
+[Back to top](<#contents>)
+
+* ### Alert Text
+
+The alert container consists of two small sections of text which are used to convey the meaning of the alert to the user. The alert title displays the question of whether the user truly wishes to return home. The short paragraph beneath the title informs the user that they will lose their progress and score in the quiz if they exit to the home section. Without this text the user may assume that their progress will be saved if they exit to the home page. By displaying this alert the user is made fully aware of the consequences of navigating away from the quiz and can make a more fully formed judgement as to what they wish to do. 
+
+![Alert Text](assets/images/readme-images/alert-text.png)
+
+[Back to top](<#contents>)
+
+* ### Alert Buttons
+
+The alert buttons consist of a further home button and a back button. The home button colour is kept consistent with the previous home buttons to avoid confusion. The back button is styled similarly to the other buttons throughout the project, except it features a red background to visually symbolise cancelling the previous choice. The home button calls the function goHome to return the user to the home page. The back button calls the function goBack. This function hides the alert and displays the quiz container. The function also plays the audio and restarts the countdown timer if the user hasn't already answered the question.
+
+![Alert Buttons](assets/images/readme-images/alert-buttons.png)
 
 [Back to top](<#contents>)
 
