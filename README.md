@@ -48,7 +48,7 @@ Link to the live site - [The Movie Soundtrack Quiz](https://matthew-hurrell.gith
      * [**Validator Tests**](<#validator-tests>)
      * [**Responsiveness Tests**](<#responsiveness-tests>)
      * [**Lighthouse Tests**](<#lighthouse-tests>)
-     * [**Browser Tests**](<#browser-tests>)
+     * [**Browser Compatibility**](<#browser-compatibility>)
      * [**Bugs**](<#bugs>)
 * [**Deployment**](<#deployment>)
      * [**Project Deployment Via GitHub**](<#project-deployment-via-github>)
@@ -361,7 +361,7 @@ The JavaScript document script.js was tested using [JSHint Javascript Validation
 
 ## Responsiveness Tests
 
-The Movie Soundtrack Quiz has been tested for responsiveness on multiple physical devices and through [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/), [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive Design Checker](https://responsivedesignchecker.com/). No errors in layout were found on any devices.
+The Movie Soundtrack Quiz was tested for responsiveness on multiple physical devices and through [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/), [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive Design Checker](https://responsivedesignchecker.com/). Responsivity screen tests were conducted through Google Chrome on iPhone SE, iPhone XR, iPhone 12 Pro, Pixel 5, Samsung Galaxy S8+, Samsung Galaxy S20 Ultra, iPad Air, iPad Mini, Surface Pro 7, Surface Duo, Galaxy Fold, Samsung Galaxy A51/71, Nest Hub, Nest Hub Max and iPhone 6/7/8 with both portrait and landscape settings. No errors in layout, appearance or functionality were found on any devices. 
 
 ![The Movie Soundtrack Quiz Responsive Design](assets/images/readme-images/responsive.png)
 
@@ -375,9 +375,9 @@ The Movie Soundtrack Quiz was tested with [Chrome Dev Tools - Lighthouse](https:
 
 [Back to top](<#contents>)
 
-## Browser Tests
+## Browser Compatibility
 
-The Movie Soundtrack Quiz was tested on a multitude of different browsers to check for any compatibility issues. Browser tests were conducted on Google Chrome, Safari and Firefox with no visible issues with styling or functionality. Responsiveness was also consistent across all browsers.
+The Movie Soundtrack Quiz was tested on a multitude of different browsers to check for any compatibility issues. Browser compatibility tests were conducted on Google Chrome, Safari and Firefox with no visible issues apparent in layout, appearance or functionality. Responsiveness was also consistent across all browsers.
 
 [Back to top](<#contents>)
 
@@ -385,14 +385,14 @@ The Movie Soundtrack Quiz was tested on a multitude of different browsers to che
 
 The Movie Soundtrack Quiz was built using vanilla HTML, CSS and JavaScript. During development a number of unforeseen challenges presented themselves, and this consequently changed the features that were included in the final project. A lack of knowledge in back end languages limited the functionality of the site.
 
-* ### Resolved 
+### Resolved 
 
 * One of the biggest challenges with this project was finding reliable way to autoplay the audio for the user. Due to recent changes in regulations, audio and video is blocked from autoplaying until a user interacts with the site. During the early development process, the project was split into three seperate HTML pages including index.html for the home page, quiz.html for the quiz section and end.html for the end section. For a user starting at the home page and progressing through the quiz as intended this was not a problem, but if a user refreshed the quiz.html page the quiz would restart but audio would not autoplay as the user technically hadn't interacted with the page yet. After trying a few solutions it was decided the best way to resolve the issue was to combine all the HTML files into one document. This way if the user refreshed the page they would be sent back to the home page section and would have to click the start button before starting the quiz. This would then count as an interaction and the audio would autoplay as it should. This solution worked but it presented new issues that needed to be resolved.
 * After the HTML documents were condensed into one HTML page the countdown timer was starting on the home page before the quiz was technically started by the user. This meant that for the first question the user had less than 60 seconds depending on how much time they spent on the home page. To resolve this issue the set interval for the javascript countdown timer had to be moved into the start game function so it was only called when the user clicked the start button.
 * Another bug that presented itself during development was an issue with the audio control icons. Originally it was planned to have icons for play, pause, volume up and volume down always on display for a user to click to control the audio. But this was later revised as it cluttered the screen for the user unnecessarily. It was therefore concluded that it was best to just have one icon, either pause or play, on display at a time. To make this work there needed to be a function with an if statement to check if the audio was playing and to display the correct icon at that time. This ended up being more complicated than expected and created a number of bugs. One of these issues was if the music was paused during a question and the next button was clicked while the music was paused the icon wouldn't change to a pause button when the audio played for the next question. To rectify this problem the function was changed to be called every time a user clicks the next button. The function also needed to be called every time a user interacts with the audio icons. This solution solved the bug with the audio icons.
 * There was also a minor issue with button links in the HTML document. The HTML validator passed errors for buttons being children of A links and vice versa. This was simply resolved by removing the A links from the buttons and creating a javascript function which sends the user to the desired location via window.open. After this was amended the HTML document passed the validator without any errors.
 
-* ### Unresolved
+### Unresolved
 
 * One unfortunate bug that still remains to be resolved is if a user clicks the pause button quickly after starting a new question the audio function to autoplay is interupted with the audio function pause and this causes the audio to show an error. This then stops the audio from playing. This isn't an error that should cause too many problems as it only happens if the pause button is clicked within a very quick tiem frame after the question is loaded. One possible way to resolve this would be to delay the functionality of the pause button for a couple of seconds until the audio is fully loaded so the user cannot interupt the audio at the start of each question. 
 
@@ -400,7 +400,7 @@ The Movie Soundtrack Quiz was built using vanilla HTML, CSS and JavaScript. Duri
 
 # Deployment
 
-## Project Deployment via GitHub
+## Project Deployment via GitHub Pages
 
 The Movie Soundtrack Quiz repository is stored on GitHub. The site was created using GitPod and the live site is hosted on GitHub Pages. This is a guide to deploy a site on GitHub Pages using GitHub. 
 
