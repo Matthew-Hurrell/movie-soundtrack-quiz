@@ -108,7 +108,7 @@ function rules() {
 
 /* Page Navigation Links */
 
-// Function to open the home page. Called when the back or home buttons are clicked
+// Function to open the home page. Called when the back button or the home buttons are clicked
 function goHome() {
     // Open home page in same tab
     window.open("index.html", "_self");
@@ -141,6 +141,7 @@ function goBack() {
     // Check if there is a class of correct in the answer buttons. If there is clear the interval timer
     for (let i = 0; i < answerButtons.length; i++) {
         if(answerButtons[i].classList.contains('correct')){
+            // Clear interval timer
             clearInterval(intervalTimer);
             return;        
         }
