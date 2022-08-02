@@ -4,6 +4,7 @@
 const containerZero = document.querySelector('.container-0');
 const containerOne = document.querySelector('.container-1');
 const containerTwo = document.querySelector('.container-2');
+const popUpContainer = document.querySelector('.pop-up-container');
 
 // Audio Player
 const player = document.getElementById('player');
@@ -33,6 +34,8 @@ const startButton = document.querySelector('#start-button');
 const rulesButton = document.getElementById('rules-button');
 const backButton = document.getElementById('back-button');
 const secondHomeButton = document.getElementById('second-home-button');
+const popUpHomeButton = document.getElementById('pop-up-home-button');
+const popUpBackButton = document.getElementById('pop-up-back-button');
 
 // Home Page 
 const unmuteElement = document.querySelector('.unmute-div');
@@ -59,6 +62,7 @@ let questionNumber = 1;
 
 // Answer Buttons //
 for(let i = 0; i < answerButtons.length; i++) {
+    // Add event listener for user click to call function checkAnswer to all answer buttons
     answerButtons[i].addEventListener('click', checkAnswer);
 }
 
@@ -68,8 +72,10 @@ endButton.addEventListener('click', end);
 rulesButton.addEventListener('click', rules);
 startButton.addEventListener('click', startGame);
 backButton.addEventListener('click', goHome);
-homeButton.addEventListener('click', goHome);
+homeButton.addEventListener('click', goHomeAlert);
 secondHomeButton.addEventListener('click', goHome);
+popUpHomeButton.addEventListener('click', goHome);
+popUpBackButton.addEventListener('click', goBack);
 
 // Score  
 score.innerText = quizScore;
@@ -78,11 +84,17 @@ score.innerText = quizScore;
 
 // Function to add rules HTML element and remove other elements. Called when rules button is clicked
 function rules() {
+    // Hide text element
     unmuteElement.classList.add('hide');
+    // Hide text element
     introText.classList.add('hide');
+    // Display back button
     backButton.classList.remove('hide');
+    // Hide rules button
     rulesButton.classList.add('hide');
+    // Hide start button
     startButton.classList.add('hide');
+    // Add HTML rules list element into intro text element
     introTextElement.innerHTML = `<ul id=rules-list>
 	<li>There are twelve questions</li>
 	<li>You have 60 seconds per question to choose your answer</li>
@@ -94,9 +106,45 @@ function rules() {
     </ul>`;
 }
 
+/* Page Navigation Links */
+
 // Function to open the home page. Called when the back or home buttons are clicked
 function goHome() {
+    // Open home page in same tab
     window.open("index.html", "_self");
+}
+
+// Function to display an alert to make the user aware they will lose their progress if they navigate home. Called when the home button is clicked during the quiz
+function goHomeAlert() {
+    // Pause audio
+    player.pause();
+    // Clear interval timer
+    clearInterval(intervalTimer);
+    // Hide quiz container
+    containerOne.classList.add('hide');
+    // Display pop-up container
+    popUpContainer.classList.remove('hide');
+}
+
+// Function to send the user back to the quiz. Called when the user clicks the back button
+function goBack() {
+    // Hide pop-up container
+    popUpContainer.classList.add('hide');
+    // Display quiz container
+    containerOne.classList.remove('hide');
+    // Play audio
+    player.play();
+    // Check audio icons
+    audioControls();
+    // Reset countdown timer interval
+    intervalTimer = setInterval(countdownTimer, 1000);
+    // Check if there is a class of correct in the answer buttons. If there is clear the interval timer
+    for (let i = 0; i < answerButtons.length; i++) {
+        if(answerButtons[i].classList.contains('correct')){
+            clearInterval(intervalTimer);
+            return;        
+        }
+    }
 }
 
 /* Audio Controls */
@@ -104,10 +152,14 @@ function goHome() {
 // Function to check if audio is playing and display the correct audio icon
 function audioControls() {
     if (player.paused && player.currentTime > 0 && !player.ended) {
+        // Hide pause button
         pause.classList.add('hide');
+        // Display play button
         play.classList.remove('hide');
     } else {
+        // Hide play button
         play.classList.add('hide');
+        // Display pause button
         pause.classList.remove('hide');
     }
 }
@@ -116,12 +168,16 @@ audioControls();
 
 // Functions to play and pause audio for audio icons
 play.addEventListener('click', () => {
+    // Play audio
     player.play();
+    // Check audio icons
     audioControls();
 });
 
 pause.addEventListener('click', () => {
+    // Pause audio
     player.pause();
+    // Check audio icons
     audioControls();
 });
 
@@ -132,18 +188,27 @@ let timer = 59;
 
 // Function to reduce countdown timer by one and if statement to trigger timeout function
 function countdownTimer() {
+    // Insert timer into timer text element
     timerElement.innerText = timer;
+    // Decrease timer by one
     --timer;
     if (timer === -1) {
+        // Clear timer interval
         clearInterval(intervalTimer);
+        // Call time out function
         timeOut();
     }
 }
 
 // Function to reset countdown timer 
 function resetCountdownTimer() {
+    // Clear timer interval
+    clearInterval(intervalTimer);
+    // Set timer element inner text to 60
     timerElement.innerText = 60;
+    // Set timer to 59
     timer = 59;
+    // Set interval timer
     intervalTimer = setInterval(countdownTimer, 1000);
 }
 
@@ -174,11 +239,11 @@ function startGame() {
 
 // Function to take data from current question object and fill it in to the elements on the quiz page. Called with start game and next question functions
 function showQuestion(currentQuestion) {
-    // Question
+    // Set question element to current question
     questionElement.innerText = currentQuestion.question;
-    // Audio
+    // Set audio element to current audio
     player.setAttribute('src', "assets/audio/" + currentQuestion.audio);
-    // Answers
+    // Set answer elements to current answers
     answerOne.innerText = currentQuestion.answer1;
     answerTwo.innerText = currentQuestion.answer2;
     answerThree.innerText = currentQuestion.answer3;
@@ -242,13 +307,20 @@ function shuffle(availableQuestions) {
 // Function to check user answer and add the correct or incorrect class to the user button choice. Called when user clicks an answer button 
 function checkAnswer() {
     for (let i = 0; i < answerButtons.length; i++){
+        // If user selected answer is equal to correct answer of current question
         if(this.innerHTML === currentQuestion.correct) {
+            // Add class of correct to user answer
             this.classList.add('correct');
+            // Call correct function
             correct();
+            // Stop loop
             return;
         } else {
+            // Add class of incorrect to user answer
             this.classList.add('incorrect');
+            // Call incorrect function
             incorrect();
+            // Stop loop
             return;
         }
     }
@@ -258,7 +330,9 @@ function checkAnswer() {
 
 // Function to display message when user runs out of time to answer a question. Also calls incorrect function
 function timeOut() {
+    // Display message user has run out of time
     questionElement.innerText = 'Sorry you have run out of time!';
+    // Call incorrect function
     incorrect();
 }
 
@@ -278,8 +352,10 @@ function correct() {
     }
     // Check if the end of the quiz is reached. If so display end button, otherwise display next button
     if (availableQuestions.length === 16){
+        // Display end button
         endButton.classList.remove('hide');
     } else {
+        // Display next button
         nextButton.classList.remove('hide');
     }
 }
@@ -291,6 +367,7 @@ function incorrect() {
     // Check the answer buttons for the correct answer and add the class correct to the correct button
     for (let i = 0; i < answerButtons.length; i++) {
         if (answerButtons[i].innerHTML === currentQuestion.correct) {
+            // Add class of correct to the correct answer
             answerButtons[i].classList.add('correct');
         } 
     }
@@ -302,8 +379,10 @@ function incorrect() {
     }
     // Check if the end of the quiz is reached. If so display end button, otherwise display next button
     if (availableQuestions.length === 16){
+        // Display end button
         endButton.classList.remove('hide');
     } else {
+        // Display next button
         nextButton.classList.remove('hide');
     }
 }
@@ -331,7 +410,9 @@ function endQuoteGenerator() {
     for(let i = 0; i < quotes.length; i++) {
         // Displays different quote for each user score possibility
         if(quizScore === i) {
+            // Display quote
             movieQuote.innerText = quotes[i].quote;
+            // Display caption
             quoteCaption.innerText = quotes[i].caption;
         }
     }

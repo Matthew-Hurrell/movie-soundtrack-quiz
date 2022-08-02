@@ -46,7 +46,7 @@ body {
 
 /* Containers */
 
-.container-0, .container-1, .container-2 {
+.container-0, .container-1, .container-2, .pop-up-container {
     background-color: rgba(255, 255, 255, 0.882);
     width: 600px;
     padding: 1rem;
@@ -99,16 +99,25 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.rules, #home-button, #second-home-button {
+.rules, #home-button, #second-home-buttonm, #pop-up-home-button {
     background: linear-gradient(#6496e6, #1d50b6);
     color: rgb(255, 255, 255);
+}
+
+#pop-up-back-button {
+    background: linear-gradient(#e66464, #b61d1d);
+    color: rgb(255, 255, 255);
+}
+
+#pop-up-back-button:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 #b61d1d;
 }
 
 .start:hover, #next-button:hover, #end-button:hover {
     box-shadow: 0 0.4rem 1.4rem 0 #479144;
 }
 
-.rules:hover, #back-button:hover, #home-button:hover, #second-home-button:hover {
+.rules:hover, #back-button:hover, #home-button:hover, #second-home-button:hover, #pop-up-home-button:hover {
     box-shadow: 0 0.4rem 1.4rem 0 #1d50b6;
 }
 
@@ -311,6 +320,12 @@ li {
 }
 
 #end-score-text {
+    text-align: center;
+}
+
+/* Pop Up */
+
+#pop-up-text-div {
     text-align: center;
 }
 
